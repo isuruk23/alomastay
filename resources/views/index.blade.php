@@ -1,0 +1,775 @@
+
+@extends('layouts.web')
+
+@section('content')
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold">Aloma Stay</h1>
+                    <p class="lead">Where Comfort Meets Timeless Elegance</p>
+                    <div class="mt-4">
+                        <a href="#booking" class="btn btn-primary btn-lg me-3">Book Your Stay</a>
+                        <a href="#rooms" class="btn btn-outline-primary btn-lg">Explore Rooms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">About Aloma Stay</h2>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="{{ asset('public/images/about.jpg') }}" 
+                         alt="Aloma Stay Lobby" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">A Legacy of Hospitality Excellence</h3>
+                    <p class="mb-4">Nestled in the heart of Sri Lanka's cultural triangle, Aloma Stay is more than just a hotel—it's an experience. Established in 2010, our boutique luxury hotel has been welcoming discerning travelers from around the world with our signature blend of traditional Sri Lankan hospitality and contemporary comfort.</p>
+                    <p class="mb-4">Our philosophy is simple: every guest should feel at home while experiencing the finest amenities and services. From the moment you step into our elegantly designed lobby, you'll be enveloped in an atmosphere of warmth and sophistication.</p>
+                    <p>Our team of dedicated professionals is committed to making your stay unforgettable, whether you're here for business, leisure, or a special celebration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Luxury Accommodations</h2>
+            <p class="text-center mb-5">Choose from our exquisite selection of rooms and suites, each designed to provide the ultimate comfort and relaxation.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <img src="{{ asset('public/images/room1.jpg') }}" 
+                             class="card-img-top" alt="Deluxe Room">
+                        <div class="card-body">
+                            <h5 class="card-title gold-text">Deluxe Room</h5>
+                            <p class="card-text">Spacious room with garden view, king-size bed, and modern amenities for a comfortable stay.</p>
+                            <div class="mb-3">
+                                <i class="bi bi-wifi gold-text me-2"></i>
+                                <i class="bi bi-tv gold-text me-2"></i>
+                                <i class="bi bi-cup gold-text me-2"></i>
+                                <i class="bi bi-water gold-text"></i>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <img src="{{ asset('public/images/room2.jpg') }}" 
+                             class="card-img-top" alt="Executive Suite">
+                        <div class="card-body">
+                            <h5 class="card-title gold-text">Executive Suite</h5>
+                            <p class="card-text">Luxurious suite with separate living area, balcony overlooking the pool, and premium amenities.</p>
+                            <div class="mb-3">
+                                <i class="bi bi-wifi gold-text me-2"></i>
+                                <i class="bi bi-tv gold-text me-2"></i>
+                                <i class="bi bi-cup gold-text me-2"></i>
+                                <i class="bi bi-water gold-text me-2"></i>
+                                <i class="bi bi-bathtub gold-text"></i>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <img src="{{ asset('public/images/room3.jpg') }}" 
+                             class="card-img-top" alt="Presidential Suite">
+                        <div class="card-body">
+                            <h5 class="card-title gold-text">Presidential Suite</h5>
+                            <p class="card-text">Our most exclusive offering with panoramic views, private butler service, and lavish interiors.</p>
+                            <div class="mb-3">
+                                <i class="bi bi-wifi gold-text me-2"></i>
+                                <i class="bi bi-tv gold-text me-2"></i>
+                                <i class="bi bi-cup gold-text me-2"></i>
+                                <i class="bi bi-water gold-text me-2"></i>
+                                <i class="bi bi-bathtub gold-text me-2"></i>
+                                <i class="bi bi-person-badge gold-text"></i>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">Facilities & Amenities</h2>
+            <p class="text-center mb-5">We offer world-class facilities to ensure your stay is comfortable, convenient, and memorable.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                    <i class="bi bi-egg-fried amenity-icon"></i>
+                    <h6>Restaurant</h6>
+                </div>
+                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                    <i class="bi bi-water amenity-icon"></i>
+                    <h6>Swimming Pool</h6>
+                </div>
+                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                    <i class="bi bi-wifi amenity-icon"></i>
+                    <h6>Free Wi-Fi</h6>
+                </div>
+                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                    <i class="bi bi-airplane amenity-icon"></i>
+                    <h6>Airport Transfers</h6>
+                </div>
+                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                    <i class="bi bi-bell amenity-icon"></i>
+                    <h6>Room Service</h6>
+                </div>
+                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                    <i class="bi bi-shield-check amenity-icon"></i>
+                    <h6>Secure Parking</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Section -->
+    <section id="dining" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Restaurant & Dining</h2>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="{{ asset('public/images/dining.jpg') }}" 
+                         alt="Aloma Stay Restaurant" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Culinary Excellence at The Golden Leaf</h3>
+                    <p class="mb-4">Our signature restaurant, The Golden Leaf, offers an exquisite dining experience blending traditional Sri Lankan flavors with international cuisine. Under the guidance of our award-winning chef, each dish is a masterpiece of taste and presentation.</p>
+                    
+                    <ul class="nav nav-pills mb-4" id="menuTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="breakfast-tab" data-bs-toggle="pill" data-bs-target="#breakfast" type="button">Breakfast</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="lunch-tab" data-bs-toggle="pill" data-bs-target="#lunch" type="button">Lunch</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="dinner-tab" data-bs-toggle="pill" data-bs-target="#dinner" type="button">Dinner</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="menuTabContent">
+                        <div class="tab-pane fade show active" id="breakfast" role="tabpanel">
+                            <p><strong>Signature Dishes:</strong> Traditional Sri Lankan breakfast platter, Western breakfast buffet, Fresh fruit platters, and Artisan pastries.</p>
+                        </div>
+                        <div class="tab-pane fade" id="lunch" role="tabpanel">
+                            <p><strong>Signature Dishes:</strong> Seafood curry buffet, Grilled meats with local spices, Traditional rice and curry spread, and Fresh salads from our garden.</p>
+                        </div>
+                        <div class="tab-pane fade" id="dinner" role="tabpanel">
+                            <p><strong>Signature Dishes:</strong> Lobster thermidor, Beef Wellington, Traditional lamprais, and Deconstructed wattalapam for dessert.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary mt-3">View Full Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Slider Section -->
+    <section id="attractions" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">Explore Nearby Attractions</h2>
+            <p class="text-center mb-5">Discover the cultural and natural wonders surrounding Aloma Stay</p>
+            
+            <!-- Swiper Slider for Attractions -->
+            <div class="swiper attractionsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Attraction 1 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card bg-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="attraction-img" alt="Sigiriya Rock Fortress">
+                            <div class="p-4">
+                                <h5>Sigiriya Rock Fortress</h5>
+                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 15 km from hotel</p>
+                                <p class="small">Ancient rock fortress and palace ruins with famous frescoes, a UNESCO World Heritage Site.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Attraction 2 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card bg-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1593693399746-69f4d2261c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="attraction-img" alt="Dambulla Cave Temple">
+                            <div class="p-4">
+                                <h5>Dambulla Cave Temple</h5>
+                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 20 km from hotel</p>
+                                <p class="small">Largest and best-preserved cave temple complex in Sri Lanka with over 150 Buddha statues.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Attraction 3 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card bg-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" 
+                                 class="attraction-img" alt="Minneriya National Park">
+                            <div class="p-4">
+                                <h5>Minneriya National Park</h5>
+                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 25 km from hotel</p>
+                                <p class="small">Famous for "The Gathering" where hundreds of wild elephants congregate during dry season.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Attraction 4 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card bg-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1558349691-1c0c6a17efc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="attraction-img" alt="Polonnaruwa Ancient City">
+                            <div class="p-4">
+                                <h5>Polonnaruwa Ancient City</h5>
+                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 40 km from hotel</p>
+                                <p class="small">Medieval capital of Sri Lanka with well-preserved ruins of palaces, temples, and statues.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Attraction 5 -->
+                    <div class="swiper-slide">
+                        <div class="attraction-card bg-white shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="attraction-img" alt="Kandy Temple of the Tooth">
+                            <div class="p-4">
+                                <h5>Temple of the Sacred Tooth Relic</h5>
+                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 75 km from hotel</p>
+                                <p class="small">One of Buddhism's most sacred sites, housing the relic of the tooth of the Buddha.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Attractions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Packages Slider Section -->
+    <section id="tours" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Curated Tour Packages</h2>
+            <p class="text-center mb-5">Experience the best of Sri Lanka with our expertly crafted tour packages</p>
+            
+            <!-- Swiper Slider for Tours -->
+            <div class="swiper toursSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Tour 1 -->
+                    <div class="swiper-slide">
+                        <div class="tour-card bg-white shadow-sm position-relative">
+                            <div class="tour-badge">$450</div>
+                            <img src="https://images.unsplash.com/photo-1552465011-b4e30bf7349d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                                 class="tour-img" alt="Cultural Triangle Tour">
+                            <div class="p-4">
+                                <h5>Cultural Triangle Explorer</h5>
+                                <p class="text-muted"><i class="bi bi-clock"></i> 3 Days / 2 Nights</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-building"></i> Culture</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-camera"></i> Photography</span>
+                                    <span class="badge bg-light text-dark"><i class="bi bi-person-walking"></i> History</span>
+                                </div>
+                                <p class="small">Visit Sigiriya, Dambulla, and Polonnaruwa with expert guides, inclusive of accommodation and meals.</p>
+                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 2 -->
+                    <div class="swiper-slide">
+                        <div class="tour-card bg-white shadow-sm position-relative">
+                            <div class="tour-badge">$320</div>
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="tour-img" alt="Wildlife Safari">
+                            <div class="p-4">
+                                <h5>Wildlife Safari Adventure</h5>
+                                <p class="text-muted"><i class="bi bi-clock"></i> 2 Days / 1 Night</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-tropical-storm"></i> Wildlife</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-camera"></i> Safari</span>
+                                    <span class="badge bg-light text-dark"><i class="bi bi-binoculars"></i> Adventure</span>
+                                </div>
+                                <p class="small">Jeep safaris in Minneriya and Kaudulla national parks to witness elephants in their natural habitat.</p>
+                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 3 -->
+                    <div class="swiper-slide">
+                        <div class="tour-card bg-white shadow-sm position-relative">
+                            <div class="tour-badge">$280</div>
+                            <img src="https://images.unsplash.com/photo-1593693399746-69f4d2261c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="tour-img" alt="Temple Trail">
+                            <div class="p-4">
+                                <h5>Sacred Temple Trail</h5>
+                                <p class="text-muted"><i class="bi bi-clock"></i> 1 Day</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-building"></i> Culture</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-person-walking"></i> Pilgrimage</span>
+                                    <span class="badge bg-light text-dark"><i class="bi bi-flower1"></i> Spiritual</span>
+                                </div>
+                                <p class="small">A spiritual journey to Dambulla Cave Temple and Temple of the Tooth in Kandy with meditation sessions.</p>
+                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tour 4 -->
+                    <div class="swiper-slide">
+                        <div class="tour-card bg-white shadow-sm position-relative">
+                            <div class="tour-badge">$520</div>
+                            <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 class="tour-img" alt="Hill Country Escape">
+                            <div class="p-4">
+                                <h5>Hill Country Escape</h5>
+                                <p class="text-muted"><i class="bi bi-clock"></i> 4 Days / 3 Nights</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-mountain"></i> Scenery</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-cup-hot"></i> Tea</span>
+                                    <span class="badge bg-light text-dark"><i class="bi bi-water"></i> Waterfalls</span>
+                                </div>
+                                <p class="small">Explore Nuwara Eliya tea plantations, Horton Plains, and enjoy cool climate with luxury accommodation.</p>
+                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">Guest Experiences</h2>
+            <p class="text-center mb-5">What our guests say about their stay at Aloma Stay</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card bg-white p-4 rounded shadow">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/women/45.jpg" 
+                                             class="rounded-circle me-3" alt="Guest" width="60" height="60">
+                                        <div>
+                                            <h5 class="mb-0">Sarah Johnson</h5>
+                                            <p class="text-muted mb-0">London, UK</p>
+                                            <div class="star-rating">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0">"Aloma Stay exceeded all our expectations. The attention to detail, exceptional service, and beautiful surroundings made our Sri Lankan holiday truly unforgettable. The cultural tour arranged by the hotel was the highlight of our trip."</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card bg-white p-4 rounded shadow">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                             class="rounded-circle me-3" alt="Guest" width="60" height="60">
+                                        <div>
+                                            <h5 class="mb-0">Michael Chen</h5>
+                                            <p class="text-muted mb-0">Singapore</p>
+                                            <div class="star-rating">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-half"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0">"The perfect blend of luxury and cultural authenticity. The staff went above and beyond to ensure our comfort, and the tour packages offered exceptional value. The wildlife safari organized through the hotel was spectacular!"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Gallery</h2>
+            <p class="text-center mb-5">A visual journey through Aloma Stay's world of luxury</p>
+            
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/1.jpg') }}" 
+                             class="img-fluid rounded" alt="Hotel Pool">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/2.jpg') }}" 
+                             class="img-fluid rounded" alt="Luxury Suite">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/3.jpg') }}" 
+                             class="img-fluid rounded" alt="Restaurant">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/4.jpg') }}" 
+                             class="img-fluid rounded" alt="Wildlife Tour">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/5.jpg') }}" 
+                             class="img-fluid rounded" alt="Wildlife Tour">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/6.jpg') }}" 
+                             class="img-fluid rounded" alt="Wildlife Tour">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/7.jpg') }}" 
+                             class="img-fluid rounded" alt="Wildlife Tour">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/8.jpg') }}" 
+                             class="img-fluid rounded" alt="Wildlife Tour">
+                        <div class="gallery-overlay rounded">
+                            <i class="bi bi-search text-white fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery categories -->
+            <div class="text-center mt-3">
+                <a href="#" class="btn btn-outline-primary me-2">Rooms</a>
+                <a href="#" class="btn btn-outline-primary me-2">Dining</a>
+                <a href="#" class="btn btn-outline-primary me-2">Tours</a>
+                <a href="#" class="btn btn-outline-primary">Attractions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">Special Offers & Packages</h2>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-warning">
+                        <div class="card-body text-center p-4">
+                            <span class="badge bg-warning text-dark mb-3">30% OFF</span>
+                            <h4 class="card-title">Early Bird Special</h4>
+                            <p class="card-text">Book 60 days in advance and enjoy 30% off our regular rates. Valid for stays of 3 nights or more.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-warning">
+                        <div class="card-body text-center p-4">
+                            <span class="badge bg-warning text-dark mb-3">COMPLIMENTARY</span>
+                            <h4 class="card-title">Honeymoon Package</h4>
+                            <p class="card-text">Celebrate your love with champagne on arrival, couple's spa treatment, and romantic dinner.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm border-warning">
+                        <div class="card-body text-center p-4">
+                            <span class="badge bg-warning text-dark mb-3">FREE TOUR</span>
+                            <h4 class="card-title">Cultural Experience Package</h4>
+                            <p class="card-text">Stay 5 nights and get a complimentary guided tour to Sigiriya Rock Fortress.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Contact & Booking</h2>
+            <div class="row mt-5">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <h4 class="mb-4">Booking Inquiry</h4>
+                    <form id="bookingForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="guests" class="form-label">Number of Guests</label>
+                                <select class="form-select" id="guests">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2" selected>2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5+">5+ Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="checkin" class="form-label">Check-in Date</label>
+                                <input type="date" class="form-control" id="checkin" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="checkout" class="form-label">Check-out Date</label>
+                                <input type="date" class="form-control" id="checkout" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Special Requests</label>
+                            <textarea class="form-control" id="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Contact Information</h4>
+                    <div class="mb-4">
+                        <h6><i class="bi bi-geo-alt gold-text me-2"></i> Address</h6>
+                        <p>123 Luxury Lane, Cultural Triangle,<br>Sri Lanka</p>
+                    </div>
+                    <div class="mb-4">
+                        <h6><i class="bi bi-telephone gold-text me-2"></i> Phone</h6>
+                        <p>+94 77 123 4567</p>
+                    </div>
+                    <div class="mb-4">
+                        <h6><i class="bi bi-envelope gold-text me-2"></i> Email</h6>
+                        <p>reservations@alomastay.com</p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="mb-3">Connect With Us</h6>
+                        <div class="social-icons">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Map placeholder -->
+                    <div class="mt-4">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.923090631344!2d80.70353367501214!3d8.012469491975036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afb0e08c4c5c4cb%3A0x4a2c3b0a3b3b3b3b!2sSigiriya%20Rock%20Fortress!5e0!3m2!1sen!2slk!4v1683795733134!5m2!1sen!2slk" 
+                                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+@endsection
+@section('script')
+<script>
+        // Initialize Swiper sliders
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attractions Swiper
+            const attractionsSwiper = new Swiper('.attractionsSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                },
+            });
+            
+            // Tours Swiper
+            const toursSwiper = new Swiper('.toursSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                },
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile navbar after click
+                        const navbarToggler = document.querySelector('.navbar-toggler');
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarToggler.click();
+                        }
+                    }
+                });
+            });
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Form submission
+            document.getElementById('bookingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you shortly.');
+                this.reset();
+            });
+            
+            // Set min date for check-in to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkin').min = today;
+            
+            // Update checkout min date when checkin changes
+            document.getElementById('checkin').addEventListener('change', function() {
+                document.getElementById('checkout').min = this.value;
+            });
+        });
+    </script>
+    @endsection
