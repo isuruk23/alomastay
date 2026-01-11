@@ -85,18 +85,22 @@
     <section id="packages-listing" class="bg-soft-beige">
         <div class="container">
             <div class="row" id="packagesContainer">
-                <!-- Romantic Escape Package -->
-                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="honeymoon stay">
+                <!-- Package -->
+                 @foreach ($mtours as $tour)
+                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="{{ $tour->type }}">
                     <div class="package-card-inner">
                         <div class="position-relative">
-                            <div class="package-badge">Honeymoon</div>
-                            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="package-img" alt="Romantic Escape Package" loading="lazy">
-                        </div>
+                            <div class="package-badge">{{ $tour->type }}</div>
+                             @if ($tour->image)
+                            <img src="{{ asset('public/' . $tour->image) }}"  class="package-img" alt="{{ $tour->name }}" loading="lazy">
+                            @else
+                            <img src="{{ asset('public/images/logo-sm.png') }}"  class="package-img" alt="{{ $tour->name }}" loading="lazy">
+                            @endif
+                         </div>
                         <div class="package-content">
-                            <h4>Romantic Escape</h4>
-                            <p class="package-duration"><i class="bi bi-calendar"></i> 3 Nights / 4 Days</p>
-                            <p class="text-muted">Perfect getaway for couples with romantic dinners, spa treatments, and private excursions.</p>
+                            <h4>{{ $tour->name }}</h4>
+                            <p class="package-duration"><i class="bi bi-calendar"></i> {{ $tour->nights }} Nights / {{ $tour->days }} Days</p>
+                            <p class="text-muted">{{ $tour->slogan }}</p>
                             
                             <div class="highlights-list">
                                 <span class="highlight-badge"><i class="bi bi-heart"></i> Romantic Dinner</span>
@@ -105,171 +109,19 @@
                             </div>
                             
                             <div class="package-price">
-                                $850 <span>/ couple</span>
+                                ${{ number_format($tour->price, 0) }} <span>/ couple</span>
                             </div>
                             
                             <div class="package-buttons">
-                                <a href="/package-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package=romantic-escape" class="btn btn-primary">Book Now</a>
+                                <a href="/package-details/{{ $tour->id }}" class="btn btn-outline-primary">View Details</a>
+                                <a href="booking.html?package={{ $tour->name }}" class="btn btn-primary">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 
-                <!-- Cultural Triangle Explorer -->
-                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="tour">
-                    <div class="package-card-inner">
-                        <div class="position-relative">
-                            <div class="package-badge">Tour Package</div>
-                            <img src="https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="package-img" alt="Cultural Triangle Explorer" loading="lazy">
-                        </div>
-                        <div class="package-content">
-                            <h4>Cultural Triangle Explorer</h4>
-                            <p class="package-duration"><i class="bi bi-calendar"></i> 4 Nights / 5 Days</p>
-                            <p class="text-muted">Immerse in Sri Lanka's ancient heritage with guided tours to UNESCO World Heritage Sites.</p>
-                            
-                            <div class="highlights-list">
-                                <span class="highlight-badge"><i class="bi bi-building"></i> Sigiriya</span>
-                                <span class="highlight-badge"><i class="bi bi-building"></i> Dambulla</span>
-                                <span class="highlight-badge"><i class="bi bi-person-walking"></i> Guided Tours</span>
-                            </div>
-                            
-                            <div class="package-price">
-                                $720 <span>/ person</span>
-                            </div>
-                            
-                            <div class="package-buttons">
-                                <a href="/package-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package=cultural-explorer" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Family Adventure Package -->
-                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="family stay">
-                    <div class="package-card-inner">
-                        <div class="position-relative">
-                            <div class="package-badge">Family</div>
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="package-img" alt="Family Adventure Package" loading="lazy">
-                        </div>
-                        <div class="package-content">
-                            <h4>Family Adventure</h4>
-                            <p class="package-duration"><i class="bi bi-calendar"></i> 5 Nights / 6 Days</p>
-                            <p class="text-muted">Fun-filled family holiday with child-friendly activities, wildlife safaris, and cultural experiences.</p>
-                            
-                            <div class="highlights-list">
-                                <span class="highlight-badge"><i class="bi bi-tropical-storm"></i> Wildlife Safari</span>
-                                <span class="highlight-badge"><i class="bi bi-joystick"></i> Kids Activities</span>
-                                <span class="highlight-badge"><i class="bi bi-people"></i> Family Room</span>
-                            </div>
-                            
-                            <div class="package-price">
-                                $1,250 <span>/ family of 4</span>
-                            </div>
-                            
-                            <div class="package-buttons">
-                                <a href="/package-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package=family-adventure" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Wellness Retreat -->
-                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="stay seasonal">
-                    <div class="package-card-inner">
-                        <div class="position-relative">
-                            <div class="package-badge">Wellness</div>
-                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="package-img" alt="Wellness Retreat Package" loading="lazy">
-                        </div>
-                        <div class="package-content">
-                            <h4>Wellness Retreat</h4>
-                            <p class="package-duration"><i class="bi bi-calendar"></i> 4 Nights / 5 Days</p>
-                            <p class="text-muted">Rejuvenate mind and body with yoga sessions, Ayurvedic treatments, and healthy cuisine.</p>
-                            
-                            <div class="highlights-list">
-                                <span class="highlight-badge"><i class="bi bi-flower3"></i> Daily Yoga</span>
-                                <span class="highlight-badge"><i class="bi bi-heart-pulse"></i> Ayurveda</span>
-                                <span class="highlight-badge"><i class="bi bi-egg-fried"></i> Healthy Meals</span>
-                            </div>
-                            
-                            <div class="package-price">
-                                $680 <span>/ person</span>
-                            </div>
-                            
-                            <div class="package-buttons">
-                                <a href="/package-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package=wellness-retreat" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Wildlife Safari Adventure -->
-                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="tour">
-                    <div class="package-card-inner">
-                        <div class="position-relative">
-                            <div class="package-badge">Adventure</div>
-                            <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" 
-                                 class="package-img" alt="Wildlife Safari Adventure" loading="lazy">
-                        </div>
-                        <div class="package-content">
-                            <h4>Wildlife Safari Adventure</h4>
-                            <p class="package-duration"><i class="bi bi-calendar"></i> 3 Nights / 4 Days</p>
-                            <p class="text-muted">Exclusive safari experience in Sri Lanka's national parks to witness elephants and leopards.</p>
-                            
-                            <div class="highlights-list">
-                                <span class="highlight-badge"><i class="bi bi-binoculars"></i> Jeep Safaris</span>
-                                <span class="highlight-badge"><i class="bi bi-tropical-storm"></i> Minneriya</span>
-                                <span class="highlight-badge"><i class="bi bi-camera"></i> Photography</span>
-                            </div>
-                            
-                            <div class="package-price">
-                                $550 <span>/ person</span>
-                            </div>
-                            
-                            <div class="package-buttons">
-                                <a href="/package-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package=wildlife-safari" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Monsoon Special -->
-                <div class="col-lg-4 col-md-6 package-card fade-in" data-category="seasonal stay">
-                    <div class="package-card-inner">
-                        <div class="position-relative">
-                            <div class="package-badge">Seasonal Offer</div>
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="package-img" alt="Monsoon Special Package" loading="lazy">
-                        </div>
-                        <div class="package-content">
-                            <h4>Monsoon Special</h4>
-                            <p class="package-duration"><i class="bi bi-calendar"></i> 2 Nights / 3 Days</p>
-                            <p class="text-muted">Perfect rainy season getaway with cozy accommodations, spa treatments, and indoor activities.</p>
-                            
-                            <div class="highlights-list">
-                                <span class="highlight-badge"><i class="bi bi-cloud-rain"></i> Rainy Retreat</span>
-                                <span class="highlight-badge"><i class="bi bi-cup-hot"></i> Hot Beverages</span>
-                                <span class="highlight-badge"><i class="bi bi-book"></i> Library Access</span>
-                            </div>
-                            
-                            <div class="package-price">
-                                $320 <span>/ person</span>
-                            </div>
-                            
-                            <div class="package-buttons">
-                                <a href="/package-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package=monsoon-special" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

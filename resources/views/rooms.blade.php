@@ -35,17 +35,21 @@
     <section class="bg-soft-beige">
         <div class="container">
             <div class="row">
+                @foreach($rooms as $room)
                 <!-- Deluxe Room -->
                 <div class="col-lg-4 col-md-6 fade-in">
                     <div class="room-card">
                         <div class="room-img-container" style="overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="room-img" alt="Deluxe Room" loading="lazy">
+                            @if ($room->image)
+                            <img src="{{ asset('public/' . $room->image) }}"  class="room-img" alt="Deluxe Room" loading="lazy">
+                            @else
+                            <img src="{{ asset('public/images/logo-sm.png') }}"  class="room-img" alt="Deluxe Room" loading="lazy">
+                            @endif
                         </div>
                         <div class="room-content">
-                            <h4>Deluxe Room</h4>
-                            <p class="room-price">$180 <span>/ night</span></p>
-                            <p class="text-muted">A spacious room with garden view, featuring modern amenities and elegant decor for a comfortable stay.</p>
+                            <h4>{{ $room->name }}</h4>
+                            <p class="room-price">${{ number_format($room->price, 0) }} <span>/ night</span></p>
+                            <p class="text-muted">{{ $room->intro }}</p>
                             
                             <div class="amenities-list">
                                 <div class="amenity-item">
@@ -67,207 +71,14 @@
                             </div>
                             
                             <div class="room-buttons">
-                                <a href="/room-details" class="btn btn-outline-primary">View Details</a>
+                                <a href="/room-details/{{ $room->id }}" class="btn btn-outline-primary">View Details</a>
                                 <a href="#booking" class="btn btn-primary">Book Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 
-                <!-- Premium Suite -->
-                <div class="col-lg-4 col-md-6 fade-in">
-                    <div class="room-card">
-                        <div class="room-img-container" style="overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" 
-                                 class="room-img" alt="Premium Suite" loading="lazy">
-                        </div>
-                        <div class="room-content">
-                            <h4>Premium Suite</h4>
-                            <p class="room-price">$320 <span>/ night</span></p>
-                            <p class="text-muted">Luxurious suite with separate living area, balcony overlooking the pool, and premium amenities.</p>
-                            
-                            <div class="amenities-list">
-                                <div class="amenity-item">
-                                    <i class="bi bi-bed amenity-icon"></i>
-                                    <span>King Bed</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-person amenity-icon"></i>
-                                    <span>3 Guests</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-wifi amenity-icon"></i>
-                                    <span>Free Wi-Fi</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-tv amenity-icon"></i>
-                                    <span>Smart TV</span>
-                                </div>
-                            </div>
-                            
-                            <div class="room-buttons">
-                                <a href="/room-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="#booking" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Family Room -->
-                <div class="col-lg-4 col-md-6 fade-in">
-                    <div class="room-card">
-                        <div class="room-img-container" style="overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1618773920993-8fe8c8b91b2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="room-img" alt="Family Room" loading="lazy">
-                        </div>
-                        <div class="room-content">
-                            <h4>Family Room</h4>
-                            <p class="room-price">$260 <span>/ night</span></p>
-                            <p class="text-muted">Spacious accommodation perfect for families, with connecting rooms and child-friendly amenities.</p>
-                            
-                            <div class="amenities-list">
-                                <div class="amenity-item">
-                                    <i class="bi bi-bed amenity-icon"></i>
-                                    <span>2 Double Beds</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-person amenity-icon"></i>
-                                    <span>4 Guests</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-wifi amenity-icon"></i>
-                                    <span>Free Wi-Fi</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-joystick amenity-icon"></i>
-                                    <span>Kids Amenities</span>
-                                </div>
-                            </div>
-                            
-                            <div class="room-buttons">
-                                <a href="/room-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="#booking" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Executive Suite -->
-                <div class="col-lg-4 col-md-6 fade-in">
-                    <div class="room-card">
-                        <div class="room-img-container" style="overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" 
-                                 class="room-img" alt="Executive Suite" loading="lazy">
-                        </div>
-                        <div class="room-content">
-                            <h4>Executive Suite</h4>
-                            <p class="room-price">$450 <span>/ night</span></p>
-                            <p class="text-muted">Our most exclusive offering with panoramic views, private butler service, and lavish interiors.</p>
-                            
-                            <div class="amenities-list">
-                                <div class="amenity-item">
-                                    <i class="bi bi-bed amenity-icon"></i>
-                                    <span>Super King Bed</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-person amenity-icon"></i>
-                                    <span>2 Guests</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-wifi amenity-icon"></i>
-                                    <span>Free Wi-Fi</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-person-badge amenity-icon"></i>
-                                    <span>Butler Service</span>
-                                </div>
-                            </div>
-                            
-                            <div class="room-buttons">
-                                <a href="/room-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="#booking" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Garden View Room -->
-                <div class="col-lg-4 col-md-6 fade-in">
-                    <div class="room-card">
-                        <div class="room-img-container" style="overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="room-img" alt="Garden View Room" loading="lazy">
-                        </div>
-                        <div class="room-content">
-                            <h4>Garden View Room</h4>
-                            <p class="room-price">$150 <span>/ night</span></p>
-                            <p class="text-muted">Charming room with private balcony overlooking our lush tropical gardens, perfect for relaxation.</p>
-                            
-                            <div class="amenities-list">
-                                <div class="amenity-item">
-                                    <i class="bi bi-bed amenity-icon"></i>
-                                    <span>Queen Bed</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-person amenity-icon"></i>
-                                    <span>2 Guests</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-wifi amenity-icon"></i>
-                                    <span>Free Wi-Fi</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-flower1 amenity-icon"></i>
-                                    <span>Garden View</span>
-                                </div>
-                            </div>
-                            
-                            <div class="room-buttons">
-                                <a href="/room-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="#booking" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Poolside Villa -->
-                <div class="col-lg-4 col-md-6 fade-in">
-                    <div class="room-card">
-                        <div class="room-img-container" style="overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="room-img" alt="Poolside Villa" loading="lazy">
-                        </div>
-                        <div class="room-content">
-                            <h4>Poolside Villa</h4>
-                            <p class="room-price">$380 <span>/ night</span></p>
-                            <p class="text-muted">Private villa with direct pool access, outdoor seating area, and exclusive amenities for ultimate luxury.</p>
-                            
-                            <div class="amenities-list">
-                                <div class="amenity-item">
-                                    <i class="bi bi-bed amenity-icon"></i>
-                                    <span>King Bed</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-person amenity-icon"></i>
-                                    <span>2 Guests</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-wifi amenity-icon"></i>
-                                    <span>Free Wi-Fi</span>
-                                </div>
-                                <div class="amenity-item">
-                                    <i class="bi bi-water amenity-icon"></i>
-                                    <span>Pool Access</span>
-                                </div>
-                            </div>
-                            
-                            <div class="room-buttons">
-                                <a href="/room-details" class="btn btn-outline-primary">View Details</a>
-                                <a href="#booking" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

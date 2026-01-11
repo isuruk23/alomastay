@@ -5,10 +5,10 @@
 <!-- Main Package Details Page -->
     <main class="aloma-package-details">
         
-       <section class="page-hero">
+       <section class="page-hero" style="background-image: url('{{ asset('public/' . $tour->image) }}');">
         <div class="container">
-            <h1>Packages & Experiences</h1>
-            <p>Curated stays and unforgettable journeys</p>
+            <h1>{{ $tour->name }}</h1>
+            <p>{{ $tour->summery }}</p>
             
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -26,45 +26,34 @@
                     <!-- 2️⃣ Package Image Gallery (Slider) -->
                     <section class="mb-5">
                         <div id="aloma-package-carousel" class="carousel slide carousel-fade rounded-4 overflow-hidden shadow" data-bs-ride="carousel">
-                            <div class="carousel-indicators aloma-carousel-indicators">
+                            <!-- <div class="carousel-indicators aloma-carousel-indicators">
                                 <button type="button" data-bs-target="#aloma-package-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#aloma-package-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#aloma-package-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#aloma-package-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                            </div>
+                          </div> -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Luxury suite with ocean view" loading="lazy" style="height: 500px; object-fit: cover;">
+                                    @if ($tour->image)
+                                    <img src="{{ asset('public/' . $tour->image) }}"  class="d-block w-100" alt="Luxury suite with ocean view" loading="lazy" style="height: 500px; object-fit: cover;">
+                                    @else
+                                    <img src="{{ asset('public/images/logo-sm.png') }}"  class="d-block w-100" alt="Luxury suite with ocean view" loading="lazy" style="height: 500px; object-fit: cover;">
+                                    @endif
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80" class="d-block w-100" alt="Private beach access" loading="lazy" style="height: 500px; object-fit: cover;">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Gourmet dining experience" loading="lazy" style="height: 500px; object-fit: cover;">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Spa and wellness center" loading="lazy" style="height: 500px; object-fit: cover;">
-                                </div>
+                                
                             </div>
-                            <button class="carousel-control-prev aloma-carousel-control" type="button" data-bs-target="#aloma-package-carousel" data-bs-slide="prev">
+                            <!-- <button class="carousel-control-prev aloma-carousel-control" type="button" data-bs-target="#aloma-package-carousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next aloma-carousel-control" type="button" data-bs-target="#aloma-package-carousel" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
-                            </button>
+                            </button> -->
                         </div>
                     </section>
                     
                     <!-- 3️⃣ Package Overview Section -->
                     <section class="mb-5">
                         <h2 class="mb-4 fw-bold aloma-text-primary">Package Overview</h2>
-                        <p class="lead">Our Premium Coastal Retreat is designed for those seeking an unparalleled luxury experience. Nestled along the pristine coastline, Aloma Stay offers a sanctuary where modern elegance meets natural beauty.</p>
-                        
-                        <p>This exclusive package includes three nights in our signature ocean-view suite, daily gourmet breakfast, and access to our private beach club. You'll enjoy personalized concierge service, a couples' spa treatment, and a sunset yacht cruise along the coast.</p>
-                        
-                        <p>Each element of your stay is carefully curated to provide relaxation, adventure, and culinary delight. From the moment you arrive, our dedicated staff will ensure every detail exceeds your expectations.</p>
+                        {!! $tour->itinerary !!}
                     </section>
                     
                     <!-- 4️⃣ What's Included -->
@@ -132,53 +121,21 @@
                     <section class="mb-5">
                         <h2 class="mb-4 fw-bold aloma-text-primary">Day-by-Day Itinerary</h2>
                         <div class="accordion" id="aloma-itinerary-accordion">
+                             @foreach($details as $detail)
                             <div class="accordion-item mb-3 rounded-3 overflow-hidden shadow-sm">
                                 <h3 class="accordion-header">
-                                    <button class="accordion-button aloma-accordion-button rounded-0 fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#aloma-day1" aria-expanded="true" aria-controls="aloma-day1">
-                                        Day 1: Arrival & Welcome
+                                    <button class="accordion-button aloma-accordion-button rounded-0 fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#aloma-day{{ $detail->day }}" aria-expanded="true" aria-controls="aloma-day{{ $detail->day }}">
+                                        Day {{ $detail->day }}: {{ $detail->title }}
                                     </button>
                                 </h3>
-                                <div id="aloma-day1" class="accordion-collapse collapse show" data-bs-parent="#aloma-itinerary-accordion">
+                                <div id="aloma-day{{ $detail->day }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" data-bs-parent="#aloma-itinerary-accordion">
                                     <div class="accordion-body">
-                                        <p class="fw-bold aloma-text-primary mb-2">Arrival and Settling In</p>
-                                        <p>Upon arrival at Aloma Stay, you'll be greeted with a welcome drink and cold towel. Our concierge will assist with check-in and escort you to your ocean-view suite. The afternoon is yours to relax and settle in.</p>
-                                        <p class="fw-bold aloma-text-primary mb-2 mt-3">Evening Experience</p>
-                                        <p>Enjoy a sunset welcome reception on the terrace followed by a gourmet dinner at our signature restaurant, "The Coastal Table," featuring locally sourced seafood and panoramic ocean views.</p>
+                                        {!! $detail->description !!}
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item mb-3 rounded-3 overflow-hidden shadow-sm">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button aloma-accordion-button collapsed rounded-0 fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#aloma-day2" aria-expanded="false" aria-controls="aloma-day2">
-                                        Day 2: Coastal Exploration
-                                    </button>
-                                </h3>
-                                <div id="aloma-day2" class="accordion-collapse collapse" data-bs-parent="#aloma-itinerary-accordion">
-                                    <div class="accordion-body">
-                                        <p class="fw-bold aloma-text-primary mb-2">Morning Adventure</p>
-                                        <p>After breakfast, embark on a guided coastal hike along the pristine shoreline. Discover hidden coves and learn about the local ecosystem from our expert guide.</p>
-                                        <p class="fw-bold aloma-text-primary mb-2 mt-3">Afternoon Relaxation</p>
-                                        <p>Return to the resort for a leisurely lunch, followed by your couples' massage at our award-winning spa. The remainder of the afternoon is free to enjoy the private beach or pool facilities.</p>
-                                        <p class="fw-bold aloma-text-primary mb-2 mt-3">Evening on the Water</p>
-                                        <p>Experience a magical sunset yacht cruise along the coastline, complete with champagne and hors d'oeuvres.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item rounded-3 overflow-hidden shadow-sm">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button aloma-accordion-button collapsed rounded-0 fs-5 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#aloma-day3" aria-expanded="false" aria-controls="aloma-day3">
-                                        Day 3: Leisure & Departure
-                                    </button>
-                                </h3>
-                                <div id="aloma-day3" class="accordion-collapse collapse" data-bs-parent="#aloma-itinerary-accordion">
-                                    <div class="accordion-body">
-                                        <p class="fw-bold aloma-text-primary mb-2">Flexible Morning</p>
-                                        <p>Enjoy a leisurely breakfast with ocean views. The morning is yours to relax, take a final swim, or participate in a complimentary yoga session on the beach.</p>
-                                        <p class="fw-bold aloma-text-primary mb-2 mt-3">Late Checkout & Farewell</p>
-                                        <p>Take advantage of our late checkout (4 PM) to enjoy the facilities. Our concierge will arrange your departure transfer to the airport, ensuring you leave with unforgettable memories of your coastal retreat.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            
                         </div>
                     </section>
                     
@@ -191,11 +148,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title aloma-text-primary fw-bold mb-3">Exclusions</h5>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><i class="bi bi-x-circle me-2 text-danger"></i>Airfare and airport taxes</li>
-                                            <li class="mb-2"><i class="bi bi-x-circle me-2 text-danger"></i>Personal expenses and souvenirs</li>
-                                            <li class="mb-2"><i class="bi bi-x-circle me-2 text-danger"></i>Additional spa treatments beyond included package</li>
-                                            <li class="mb-2"><i class="bi bi-x-circle me-2 text-danger"></i>Alcoholic beverages (except where specified)</li>
-                                            <li class="mb-2"><i class="bi bi-x-circle me-2 text-danger"></i>Travel insurance (highly recommended)</li>
+                                           {!! $tour->excludes !!}
                                         </ul>
                                     </div>
                                 </div>
@@ -205,11 +158,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title aloma-text-primary fw-bold mb-3">Important Notes</h5>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><i class="bi bi-info-circle me-2 aloma-icon"></i>Package is based on double occupancy</li>
-                                            <li class="mb-2"><i class="bi bi-info-circle me-2 aloma-icon"></i>Minimum 14-day advance booking required</li>
-                                            <li class="mb-2"><i class="bi bi-info-circle me-2 aloma-icon"></i>Valid for stays from June to October 2023</li>
-                                            <li class="mb-2"><i class="bi bi-info-circle me-2 aloma-icon"></i>Cancellation policy: 30 days for full refund</li>
-                                            <li class="mb-2"><i class="bi bi-info-circle me-2 aloma-icon"></i>Some activities weather-dependent</li>
+                                           {!! $tour->important !!}
                                         </ul>
                                     </div>
                                 </div>
@@ -255,7 +204,7 @@
                                 </div>
                                 
                                 <div class="d-grid mb-3">
-                                    <button type="button" class="btn aloma-btn-primary py-3 rounded-3 fw-bold fs-5">Book Now — $2,499</button>
+                                    <button type="button" class="btn aloma-btn-primary py-3 rounded-3 fw-bold fs-5">Book Now — ${{ number_format($tour->price, 0) }}</button>
                                 </div>
                                 
                                 <div class="d-grid">
@@ -280,7 +229,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-0">Duration</p>
-                                    <p class="text-muted mb-0">3 Nights / 4 Days</p>
+                                    <p class="text-muted mb-0">{{ $tour->nights }} Nights / {{ $tour->days }} Days</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center mb-3">
@@ -316,7 +265,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-0">Package Price</p>
-                                    <p class="aloma-price aloma-text-primary mb-0">$2,499</p>
+                                    <p class="aloma-price aloma-text-primary mb-0">${{ number_format($tour->price, 0) }}</p>
                                     <p class="text-muted small mb-0">Per couple, all inclusive</p>
                                 </div>
                             </div>
@@ -333,45 +282,26 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row g-4">
+                                 @foreach ($mtours as $tour)
                                 <div class="col-md-4">
                                     <div class="card border-0 rounded-4 shadow-sm h-100 aloma-shadow-hover">
-                                        <img src="https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="card-img-top rounded-top-4" alt="Mountain Wellness Retreat" loading="lazy" style="height: 220px; object-fit: cover;">
+                                        @if ($tour->image)
+                                        <img src="{{ asset('public/' . $tour->image) }}"  class="card-img-top rounded-top-4" alt="Mountain Wellness Retreat"  style="height: 220px; object-fit: cover;" alt="{{ $tour->name }}" loading="lazy">
+                                        @else
+                                        <img src="{{ asset('public/images/logo-sm.png') }}"  class="card-img-top rounded-top-4" alt="Mountain Wellness Retreat"  style="height: 220px; object-fit: cover;" alt="{{ $tour->name }}">
+                                        @endif
                                         <div class="card-body p-4">
-                                            <h5 class="card-title fw-bold">Mountain Wellness Retreat</h5>
-                                            <p class="card-text text-muted">Reconnect with nature in our serene mountain sanctuary with daily yoga and holistic treatments.</p>
+                                            <h5 class="card-title fw-bold">{{ $tour->name }}</h5>
+                                            <p class="card-text text-muted">{{ $tour->slogan }}</p>
                                             <div class="d-flex justify-content-between align-items-center mt-4">
-                                                <span class="fw-bold fs-5 aloma-text-primary">$1,899</span>
-                                                <a href="#" class="btn aloma-btn-primary rounded-3">View Details</a>
+                                                <span class="fw-bold fs-5 aloma-text-primary">${{ number_format($tour->price, 0) }}</span>
+                                                <a href="/package-details/{{ $tour->id }}" class="btn aloma-btn-primary rounded-3">View Details</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="card border-0 rounded-4 shadow-sm h-100 aloma-shadow-hover">
-                                        <img src="https://images.unsplash.com/photo-1564501049418-3c27787d01e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="card-img-top rounded-top-4" alt="Urban Luxury Escape" loading="lazy" style="height: 220px; object-fit: cover;">
-                                        <div class="card-body p-4">
-                                            <h5 class="card-title fw-bold">Urban Luxury Escape</h5>
-                                            <p class="card-text text-muted">Experience city sophistication with premium dining, theater tickets, and private city tours.</p>
-                                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                                <span class="fw-bold fs-5 aloma-text-primary">$2,199</span>
-                                                <a href="#" class="btn aloma-btn-primary rounded-3">View Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card border-0 rounded-4 shadow-sm h-100 aloma-shadow-hover">
-                                        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" class="card-img-top rounded-top-4" alt="Family Adventure Package" loading="lazy" style="height: 220px; object-fit: cover;">
-                                        <div class="card-body p-4">
-                                            <h5 class="card-title fw-bold">Family Adventure Package</h5>
-                                            <p class="card-text text-muted">Fun for all ages with kid-friendly activities, family suites, and daily adventure excursions.</p>
-                                            <div class="d-flex justify-content-between align-items-center mt-4">
-                                                <span class="fw-bold fs-5 aloma-text-primary">$3,299</span>
-                                                <a href="#" class="btn aloma-btn-primary rounded-3">View Details</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                 @endforeach
+                                
                             </div>
                         </div>
                     </div>

@@ -3,16 +3,16 @@
 
 @section('content')
 <!-- Room Hero -->
-    <section class="room-hero">
+    <section class="room-hero" style="background-image: url('{{ asset('public/' . $room->image) }}');">
         <div class="container">
-            <h1 class="fade-in">Deluxe Room</h1>
-            <p class="fade-in">Spacious comfort with elegant interiors and garden view</p>
+            <h1 class="fade-in">{{ $room->name }}</h1>
+            <p class="fade-in">{{ $room->intro }}</p>
             
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb fade-in">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="rooms.html">Rooms</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Deluxe Room</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $room->name }}</li>
                 </ol>
             </nav>
         </div>
@@ -24,21 +24,14 @@
             <div class="swiper roomSwiper fade-in">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Deluxe Room Bed Area" loading="lazy">
+                        
+                    @if ($room->image)
+                            <img src="{{ asset('public/' . $room->image) }}"  alt="{{ $room->name }}" loading="lazy">
+                            @else
+                            <img src="{{ asset('public/images/logo-sm.png') }}" loading="lazy">
+                            @endif
                     </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
-                             alt="Deluxe Room Bathroom" loading="lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Deluxe Room Balcony View" loading="lazy">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Deluxe Room Workspace" loading="lazy">
-                    </div>
+                    
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -54,13 +47,7 @@
                 <div class="col-lg-8 fade-in">
                     <div class="room-description">
                         <h2>Room Overview</h2>
-                        <p>Our Deluxe Room offers a perfect blend of comfort and sophistication, designed for discerning travelers seeking a tranquil retreat. Spanning 35 square meters, this spacious accommodation features elegant contemporary decor with subtle Sri Lankan touches.</p>
-                        
-                        <p>The room is centered around a luxurious king-size bed adorned with premium linens, ensuring restful nights. Large windows frame picturesque views of our lush tropical gardens, filling the space with natural light while maintaining privacy.</p>
-                        
-                        <p>Thoughtful amenities include a comfortable seating area for relaxation, a dedicated workspace for business travelers, and a private balcony where you can enjoy your morning coffee surrounded by the soothing sounds of nature.</p>
-                        
-                        <p>Every detail has been carefully considered, from the ambient lighting system to the local artwork that adorns the walls, creating an atmosphere of refined comfort that honors Sri Lanka's rich cultural heritage while providing modern luxury.</p>
+                        {!!$room->overview !!}
                     </div>
                 </div>
                 
@@ -69,7 +56,7 @@
                         <h4 class="text-center">Room Details</h4>
                         <div class="detail-item">
                             <span class="detail-label">Room Size</span>
-                            <span class="detail-value">35 m²</span>
+                            <span class="detail-value">{{ $room->size }} m²</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Bed Type</span>
@@ -316,44 +303,26 @@
             <p class="text-center mb-5 fade-in">Explore other luxurious accommodations at Aloma Stay</p>
             
             <div class="row">
+                @foreach($rooms as $room)
                 <div class="col-md-4 fade-in">
                     <div class="similar-room-card">
-                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" 
-                             class="similar-room-img" alt="Premium Suite" loading="lazy">
+                        
+                              @if ($room->image)
+                            <img src="{{ asset('public/' . $room->image) }}"  class="similar-room-img" alt="Deluxe Room" loading="lazy">
+                            @else
+                            <img src="{{ asset('public/images/logo-sm.png') }}"  class="similar-room-img" alt="Deluxe Room" loading="lazy">
+                            @endif
                         <div class="similar-room-content">
-                            <h5>Premium Suite</h5>
-                            <p class="small text-muted">Luxurious suite with separate living area and pool view</p>
-                            <div class="similar-room-price">$320 / night</div>
-                            <a href="premium-suite.html" class="btn btn-outline-primary w-100">View Details</a>
+                            <h5>{{ $room->name }}</h5>
+                            <p class="small text-muted">{{ $room->intro }}</p>
+                            <div class="similar-room-price">${{ number_format($room->price, 0) }} / night</div>
+                            <a href="/room-details/{{ $room->id }}" class="btn btn-outline-primary w-100">View Details</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 
-                <div class="col-md-4 fade-in">
-                    <div class="similar-room-card">
-                        <img src="https://images.unsplash.com/photo-1618773920993-8fe8c8b91b2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                             class="similar-room-img" alt="Family Room" loading="lazy">
-                        <div class="similar-room-content">
-                            <h5>Family Room</h5>
-                            <p class="small text-muted">Spacious accommodation perfect for families with children</p>
-                            <div class="similar-room-price">$260 / night</div>
-                            <a href="family-room.html" class="btn btn-outline-primary w-100">View Details</a>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="col-md-4 fade-in">
-                    <div class="similar-room-card">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" 
-                             class="similar-room-img" alt="Executive Suite" loading="lazy">
-                        <div class="similar-room-content">
-                            <h5>Executive Suite</h5>
-                            <p class="small text-muted">Our most exclusive offering with panoramic views</p>
-                            <div class="similar-room-price">$450 / night</div>
-                            <a href="executive-suite.html" class="btn btn-outline-primary w-100">View Details</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
