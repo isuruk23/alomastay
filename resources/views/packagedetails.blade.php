@@ -350,7 +350,7 @@
                                 <i class="bi bi-telephone text-white fs-1"></i>
                             </div>
                             <p class="fw-bold mt-3 mb-1">Prefer to Call?</p>
-                            <p class="fs-4 aloma-text-primary fw-bold mb-0">1-800-555-ALOMA</p>
+                            <p class="fs-4 aloma-text-primary fw-bold mb-0">+94 77 847 8588</p>
                         </div>
                     </div>
                 </div>

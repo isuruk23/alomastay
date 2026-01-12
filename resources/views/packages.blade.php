@@ -220,8 +220,8 @@
                 </p>
                 
                 <div class="package-cta-buttons">
-                    <a href="contact.html?request=custom" class="btn btn-primary btn-lg">Customize Your Package</a>
-                    <a href="contact.html" class="btn package-btn-outline-light btn-lg">Contact Our Team</a>
+                    <a href="/contact" class="btn btn-primary btn-lg">Customize Your Package</a>
+                    <a href="/contact" class="btn package-btn-outline-light btn-lg">Contact Our Team</a>
                 </div>
             </div>
         </div>

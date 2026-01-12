@@ -162,7 +162,7 @@
     </section>
 
     <!-- Compare Rooms Table -->
-    <section class="bg-soft-beige">
+    <!-- <section class="bg-soft-beige">
         <div class="container">
             <h2 class="section-title fade-in">Compare Our Rooms</h2>
             <p class="intro-text fade-in">
@@ -235,7 +235,7 @@
                 </table>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Booking CTA -->
     <section class="booking-cta">
@@ -249,8 +249,8 @@
                 </p>
                 
                 <div class="cta-buttons">
-                    <a href="#booking" class="btn btn-primary btn-lg">Check Availability</a>
-                    <a href="contact.html" class="btn btn-outline-primary btn-lg" style="border-color: white; color: white;">Contact for Custom Requests</a>
+                    <a href="/rooms" class="btn btn-primary btn-lg">Check Availability</a>
+                    <a href="/contact" class="btn btn-outline-primary btn-lg" style="border-color: white; color: white;">Contact for Custom Requests</a>
                 </div>
             </div>
         </div>

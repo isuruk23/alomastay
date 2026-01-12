@@ -81,18 +81,17 @@
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 class="mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#home">Home</a></li>
-                        <li class="mb-2"><a href="#rooms">Rooms & Suites</a></li>
-                        <li class="mb-2"><a href="#dining">Dining</a></li>
-                        <li class="mb-2"><a href="#tours">Tour Packages</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="mb-2"><a href="/">Home</a></li>
+                        <li class="mb-2"><a href="/rooms">Rooms & Suites</a></li>
+                        <li class="mb-2"><a href="/packages">Tour Packages</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="mb-3">Contact Us</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> 123 Luxury Lane, Cultural Triangle, Sri Lanka</li>
-                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +94 77 123 4567</li>
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>243/41/B Sangabogama, Kandy (20400), Sri Lanka.</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +94 77 847 8588</li>
                         <li class="mb-2"><i class="bi bi-envelope me-2"></i> reservations@alomastay.com</li>
                     </ul>
                 </div>

@@ -12,8 +12,8 @@
                     <h1 class="display-3 fw-bold">Aloma Stay</h1>
                     <p class="lead">Where Comfort Meets Timeless Elegance</p>
                     <div class="mt-4">
-                        <a href="#booking" class="btn btn-primary btn-lg me-3">Book Your Stay</a>
-                        <a href="#rooms" class="btn btn-outline-primary btn-lg">Explore Rooms</a>
+                        <a href="/rooms" class="btn btn-primary btn-lg me-3">Book Your Stay</a>
+                        <a href="/rooms" class="btn btn-outline-primary btn-lg">Explore Rooms</a>
                     </div>
                 </div>
             </div>
@@ -485,11 +485,11 @@
                     <h4 class="mb-4">Contact Information</h4>
                     <div class="mb-4">
                         <h6><i class="bi bi-geo-alt gold-text me-2"></i> Address</h6>
-                        <p>123 Luxury Lane, Cultural Triangle,<br>Sri Lanka</p>
+                        <p>243/41/B Sangabogama, Kandy (20400),<br>Sri Lanka</p>
                     </div>
                     <div class="mb-4">
                         <h6><i class="bi bi-telephone gold-text me-2"></i> Phone</h6>
-                        <p>+94 77 123 4567</p>
+                        <p>+94 77 847 8588</p>
                     </div>
                     <div class="mb-4">
                         <h6><i class="bi bi-envelope gold-text me-2"></i> Email</h6>

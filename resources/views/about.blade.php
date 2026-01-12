@@ -106,7 +106,7 @@
     </section>
 
     <!-- Our Team -->
-    <section class="bg-soft-beige">
+    <!-- <section class="bg-soft-beige">
         <div class="container">
             <h2 class="section-title fade-in">Meet Our Team</h2>
             <p class="text-center mb-5 fade-in" style="max-width: 800px; margin: 0 auto;">Behind every memorable stay at Aloma Stay is a dedicated team passionate about hospitality.</p>
@@ -161,7 +161,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Our Values -->
     <section id="our-values">

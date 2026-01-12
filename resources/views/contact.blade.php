@@ -31,7 +31,7 @@
                             </div>
                             <div>
                                 <p class="fw-bold mb-1 aloma-text-primary">Call Now</p>
-                                <p class="text-muted small mb-0">+1 (800) 555-ALOMA</p>
+                                <p class="text-muted small mb-0">+94 77 847 8588</p>
                             </div>
                         </a>
                     </div>
@@ -53,7 +53,7 @@
                             </div>
                             <div>
                                 <p class="fw-bold mb-1 aloma-text-primary">Visit Us</p>
-                                <p class="text-muted small mb-0">123 Coastal Drive, Malibu</p>
+                                <p class="text-muted small mb-0">243/41/B Sangabogama, Kandy (20400), Sri Lanka.</p>
                             </div>
                         </a>
                     </div>
