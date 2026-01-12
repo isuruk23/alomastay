@@ -43,7 +43,11 @@ class PageController extends Controller
     {
         $tour = MultiDayTour::where('id',$id)->first();
         $details = MultiDayTourDetails::where('tour_id',$id)->orderBy('day', 'asc')->get();
-        $mtours = MultiDayTourDetails::latest()->take(3)->get();
+        $mtoursQuery = MultiDayTourDetails::latest()->get();
+
+        $mtours = $mtoursQuery->count() >= 3
+            ? $mtoursQuery->random(3)
+            : $mtoursQuery;
       
         $rooms = Room::latest()->get();
 
