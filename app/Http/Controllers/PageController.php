@@ -14,7 +14,7 @@ class PageController extends Controller
     {
         $mtours = MultiDayTour::all();
         $thingstodos = Thingstodo::all();
-        $rooms = Room::latest()->get()->random(3);
+        $rooms = Room::latest()->take(3)->get();
    
         return view('index', compact('mtours','thingstodos','rooms'));
     }
@@ -30,7 +30,7 @@ class PageController extends Controller
     public function roomdetails($id)
     {
         $room = Room::findOrFail($id);
-        $rooms = Room::latest()->get()->random(3);
+        $rooms = Room::latest()->take(3)->get();
         return view('room-details', compact('room', 'rooms'));
     }
     public function packages()
@@ -43,7 +43,7 @@ class PageController extends Controller
     {
         $tour = MultiDayTour::where('id',$id)->first();
         $details = MultiDayTourDetails::where('tour_id',$id)->orderBy('day', 'asc')->get();
-        $mtours = MultiDayTourDetails::latest()->get()->random(3);
+        $mtours = MultiDayTourDetails::latest()->take(3)->get();
       
         $rooms = Room::latest()->get();
 
