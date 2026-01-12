@@ -44,6 +44,7 @@ class PageController extends Controller
         $tour = MultiDayTour::where('id',$id)->first();
         $details = MultiDayTourDetails::where('tour_id',$id)->orderBy('day', 'asc')->get();
         $mtours = MultiDayTourDetails::latest()->limit(3)->get();
+        dd($mtours);
 
        
       
