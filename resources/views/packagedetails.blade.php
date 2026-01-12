@@ -53,7 +53,7 @@
                     <!-- 3️⃣ Package Overview Section -->
                     <section class="mb-5">
                         <h2 class="mb-4 fw-bold aloma-text-primary">Package Overview</h2>
-                        {!! $tour->itinerary !!}
+                        {!! $tour->description !!}
                     </section>
                     
                     <!-- 4️⃣ What's Included -->
@@ -230,7 +230,7 @@
                                 
                                 <div class="mt-4 text-center">
                                     <p class="text-muted small mb-2">Need assistance? Call our concierge</p>
-                                    <p class="fw-bold fs-5 aloma-text-primary mb-0">+1 (800) 555-ALOMA</p>
+                                    <p class="fw-bold fs-5 aloma-text-primary mb-0">+94 77 847 8588</p>
                                 </div>
                             </div>
                         </div>
