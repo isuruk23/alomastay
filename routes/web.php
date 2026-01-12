@@ -19,6 +19,8 @@ Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('in
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
 Route::get('/room-details/{id}', [App\Http\Controllers\PageController::class, 'roomdetails'])->name('room-details');
 Route::get('/rooms', [App\Http\Controllers\PageController::class, 'rooms'])->name('rooms');
+Route::post('/room/book', [BookingController::class, 'bookroom'])->name('room.book');
+
 Route::get('/packages', [App\Http\Controllers\PageController::class, 'packages'])->name('packages');
 Route::get('/package-details/{id}', [App\Http\Controllers\PageController::class, 'packagedetails'])->name('package-details');
 Route::get('/contact', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');

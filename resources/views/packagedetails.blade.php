@@ -177,37 +177,54 @@
                                 <h3 class="card-title mb-0 text-center fw-bold aloma-text-primary">Book This Package</h3>
                             </div>
                             <div class="card-body p-4">
-                                <div class="mb-3">
-                                    <label for="aloma-dates" class="form-label fw-semibold">Select Dates</label>
-                                    <input type="text" class="form-control py-3 rounded-3" id="aloma-dates" placeholder="Check-in — Check-out">
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="aloma-guests" class="form-label fw-semibold">Number of Guests</label>
-                                    <select class="form-select py-3 rounded-3" id="aloma-guests">
-                                        <option selected>2 Guests</option>
-                                        <option value="1">1 Guest</option>
-                                        <option value="2">2 Guests</option>
-                                        <option value="3">3 Guests</option>
-                                        <option value="4">4 Guests</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-4">
-                                    <label for="aloma-room" class="form-label fw-semibold">Room Type</label>
-                                    <select class="form-select py-3 rounded-3" id="aloma-room">
-                                        <option selected>Ocean View Suite</option>
-                                        <option value="1">Premium Ocean View</option>
-                                        <option value="2">Oceanfront Villa</option>
-                                        <option value="3">Presidential Suite</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="d-grid mb-3">
-                                    <button type="button" class="btn aloma-btn-primary py-3 rounded-3 fw-bold fs-5">Book Now — ${{ number_format($tour->price, 0) }}</button>
-                                </div>
-                                
-                                <div class="d-grid">
+                                <div id="bookingAlert" class="alert d-none" role="alert"></div>
+
+                                <form id="roomBookingForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Contact No</label>
+                                        <input type="text" class="form-control" id="phone" name="phone">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="check_in" class="form-label">Check-in Date</label>
+                                        <input type="date" class="form-control" id="check_in" name="check_in">
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="check_out" class="form-label">Check-out Date</label>
+                                        <input type="date" class="form-control" id="check_out" name="check_out">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="room" class="form-label fw-semibold">Room</label>
+                                        <select class="form-select py-3 rounded-3" id="room_no" name="room_no">
+                                            @foreach($rooms as $room)                                           
+                                            <option value="{{ $room->id }}">{{ $room->name }}</option>
+                                            @endforeach
+                                     
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="guests" class="form-label">Guests</label>
+                                        <select class="form-select" id="guests" name="guests">
+                                            <option value="1">1 Guest</option>
+                                            <option value="2" selected>2 Guests</option>
+                                            <option value="3">3 Guests</option>
+                                            <option value="4">4 Guests</option>
+                                        </select>
+                                    </div>
+                                    
+                                    
+                                    <button type="button" id="bookRoomBtn"  class="btn btn-primary">Book This Room</button>
+                                </form>
+                                <div class="d-grid mt-3">
                                     <button type="button" class="btn aloma-btn-outline-primary py-3 rounded-3 fw-bold">Inquire About Package</button>
                                 </div>
                                 
@@ -282,20 +299,20 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row g-4">
-                                 @foreach ($mtours as $tour)
+                                 @foreach ($mtours as $rtour)
                                 <div class="col-md-4">
                                     <div class="card border-0 rounded-4 shadow-sm h-100 aloma-shadow-hover">
-                                        @if ($tour->image)
-                                        <img src="{{ asset('public/' . $tour->image) }}"  class="card-img-top rounded-top-4" alt="Mountain Wellness Retreat"  style="height: 220px; object-fit: cover;" alt="{{ $tour->name }}" loading="lazy">
+                                        @if ($rtour->image)
+                                        <img src="{{ asset('public/' . $rtour->image) }}"  class="card-img-top rounded-top-4" alt="{{ $rtour->name }}"  style="height: 220px; object-fit: cover;" alt="{{ $rtour->name }}" loading="lazy">
                                         @else
-                                        <img src="{{ asset('public/images/logo-sm.png') }}"  class="card-img-top rounded-top-4" alt="Mountain Wellness Retreat"  style="height: 220px; object-fit: cover;" alt="{{ $tour->name }}">
+                                        <img src="{{ asset('public/images/logo-sm.png') }}"  class="card-img-top rounded-top-4" alt="{{ $rtour->name }}"  style="height: 220px; object-fit: cover;" alt="{{ $tour->name }}">
                                         @endif
                                         <div class="card-body p-4">
-                                            <h5 class="card-title fw-bold">{{ $tour->name }}</h5>
-                                            <p class="card-text text-muted">{{ $tour->slogan }}</p>
+                                            <h5 class="card-title fw-bold">{{ $rtour->name }}</h5>
+                                            <p class="card-text text-muted">{{ $rtour->slogan }}</p>
                                             <div class="d-flex justify-content-between align-items-center mt-4">
-                                                <span class="fw-bold fs-5 aloma-text-primary">${{ number_format($tour->price, 0) }}</span>
-                                                <a href="/package-details/{{ $tour->id }}" class="btn aloma-btn-primary rounded-3">View Details</a>
+                                                <span class="fw-bold fs-5 aloma-text-primary">${{ number_format($rtour->price, 0) }}</span>
+                                                <a href="/package-details/{{ $rtour->id }}" class="btn aloma-btn-primary rounded-3">View Details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -371,4 +388,51 @@
             });
         });
     </script>
+    <script>
+$(document).ready(function () {
+
+    $('#bookRoomBtn').on('click', function () {
+
+        let formData = new FormData($('#roomBookingForm')[0]);
+        let alertBox = $('#bookingAlert');
+
+        $.ajax({
+            url: "{{ route('room.book') }}",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            success: function (res) {
+
+                alertBox.removeClass('d-none alert-danger alert-success');
+
+                if (res.status) {
+                    alertBox.addClass('alert-success').text(res.message);
+                    $('#roomBookingForm')[0].reset();
+                } else {
+                    alertBox.addClass('alert-danger').text(res.message);
+                }
+            },
+            error: function (xhr) {
+
+            let msg = 'Something went wrong. Please try again.';
+
+            if (xhr.responseJSON && xhr.responseJSON.message) {
+                msg = xhr.responseJSON.message; // <-- your custom message
+            }
+
+            alertBox
+                .removeClass('d-none alert-success')
+                .addClass('alert-danger')
+                .text(msg);
+        }
+        });
+
+    });
+
+});
+</script>
 @endsection

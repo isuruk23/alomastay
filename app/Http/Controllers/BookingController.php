@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -29,13 +31,14 @@ class BookingController extends Controller
    
 
 
-public function book(Request $request)
+public function bookroom(Request $request)
 {
     $request->validate([
         'name' => 'required',
         'email' => 'required|email',
         'room_no' => 'required|integer',
         'phone' => 'required',
+        'guests' => 'required',
         'check_in' => 'required|date',
         'check_out' => 'required|date|after_or_equal:check_in',
     ]);
@@ -46,6 +49,7 @@ public function book(Request $request)
     $room_id = $request->room_no;
     $check_in_date = $request->check_in;
     $check_out_date = $request->check_out;
+    $guests = $request->guests;
 
     // Convert to 2:00 PM datetime
     $check_in = Carbon::parse($check_in_date)->setTime(14,0,0);
@@ -68,12 +72,14 @@ public function book(Request $request)
     }
 
     // Save booking
+    
     $booking = Booking::create([
         'name' => $request->name,
         'email' => $request->email,
         'phone' => $request->phone,
         'room_no' => $room_id,
         'check_in' => $check_in,
+        'guests' => $guests,
         'check_out' => $check_out,
         'status' => 0,
     ]);

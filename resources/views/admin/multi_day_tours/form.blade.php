@@ -1,14 +1,4 @@
-        <div class="mb-3">
-            <label for="country" class="form-label">Country</label>
-            <select class="form-control form-control-sm" name="country" id="country">
-                <option value="">Select</option>
-                <option value="1" {{ old('country', $multiDayTour->country ?? '') == '1' ? 'selected' : '' }}>Sri Lanka</option>
-                <option value="2" {{ old('country', $multiDayTour->country ?? '') == '2' ? 'selected' : '' }}>Bangkok</option>
-            </select>
-            @if ($errors->has('country'))
-                <div class="text-danger">{{ $errors->first('country') }}</div>
-            @endif
-        </div>
+      
 
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -40,7 +30,7 @@
             @if ($errors->has('summary'))
                 <div class="text-danger">{{ $errors->first('summary') }}</div>
             @endif
-        </div>
+        </div-->
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
@@ -48,7 +38,7 @@
             @if ($errors->has('description'))
                 <div class="text-danger">{{ $errors->first('description') }}</div>
             @endif
-        </div-->
+        </div>
 
         <div class="mb-3">
             <label for="days" class="form-label">Days</label>

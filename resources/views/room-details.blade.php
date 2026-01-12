@@ -249,21 +249,34 @@
                 <div class="col-lg-4 fade-in">
                     <div class="booking-form">
                         <h4 class="text-center mb-4">Check Availability</h4>
-                        
+                        <div id="bookingAlert" class="alert d-none" role="alert"></div>
+
                         <form id="roomBookingForm">
                             <div class="mb-3">
-                                <label for="checkinDate" class="form-label">Check-in Date</label>
-                                <input type="date" class="form-control" id="checkinDate" required>
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Contact No</label>
+                                <input type="text" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="check_in" class="form-label">Check-in Date</label>
+                                <input type="date" class="form-control" id="check_in" name="check_in">
                             </div>
                             
                             <div class="mb-3">
-                                <label for="checkoutDate" class="form-label">Check-out Date</label>
-                                <input type="date" class="form-control" id="checkoutDate" required>
+                                <label for="check_out" class="form-label">Check-out Date</label>
+                                <input type="date" class="form-control" id="check_out" name="check_out">
                             </div>
                             
                             <div class="mb-3">
                                 <label for="guests" class="form-label">Guests</label>
-                                <select class="form-select" id="guests">
+                                <select class="form-select" id="guests" name="guests">
                                     <option value="1">1 Guest</option>
                                     <option value="2" selected>2 Guests</option>
                                     <option value="3">3 Guests</option>
@@ -271,20 +284,13 @@
                                 </select>
                             </div>
                             
-                            <div class="mb-3">
-                                <label for="rooms" class="form-label">Rooms</label>
-                                <select class="form-select" id="rooms">
-                                    <option value="1">1 Room</option>
-                                    <option value="2">2 Rooms</option>
-                                    <option value="3">3 Rooms</option>
-                                </select>
-                            </div>
+                            
                             
                             <div class="room-price mb-4">
                                 $180 <span>/ night</span>
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary">Book This Room</button>
+                            <input type="hidden" name="room_no" value="{{ $room->id }}">
+                            <button type="button" id="bookRoomBtn"  class="btn btn-primary">Book This Room</button>
                         </form>
                         
                         <div class="text-center mt-3">
@@ -414,66 +420,6 @@
             // Check on scroll
             window.addEventListener('scroll', fadeInOnScroll);
             
-            // Set min date for check-in to today
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('checkinDate').min = today;
-            
-            // Update checkout min date when checkin changes
-            document.getElementById('checkinDate').addEventListener('change', function() {
-                const checkinDate = new Date(this.value);
-                const minCheckout = new Date(checkinDate);
-                minCheckout.setDate(minCheckout.getDate() + 1);
-                
-                const minCheckoutStr = minCheckout.toISOString().split('T')[0];
-                document.getElementById('checkoutDate').min = minCheckoutStr;
-                
-                // If checkout date is before new minimum, reset it
-                const checkoutDate = new Date(document.getElementById('checkoutDate').value);
-                if (checkoutDate <= checkinDate) {
-                    document.getElementById('checkoutDate').value = minCheckoutStr;
-                }
-            });
-            
-            // Form submission
-            document.getElementById('roomBookingForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const checkin = document.getElementById('checkinDate').value;
-                const checkout = document.getElementById('checkoutDate').value;
-                const guests = document.getElementById('guests').value;
-                const rooms = document.getElementById('rooms').value;
-                
-                // Simple validation
-                if (!checkin || !checkout) {
-                    alert('Please select both check-in and check-out dates.');
-                    return;
-                }
-                
-                // Calculate nights
-                const checkinDate = new Date(checkin);
-                const checkoutDate = new Date(checkout);
-                const nights = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
-                
-                if (nights <= 0) {
-                    alert('Check-out date must be after check-in date.');
-                    return;
-                }
-                
-                // Calculate total price
-                const pricePerNight = 180;
-                const totalPrice = pricePerNight * nights * rooms;
-                
-                // Show confirmation
-                alert(`Thank you for your booking request!\n\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}\nRooms: ${rooms}\nNights: ${nights}\nTotal: $${totalPrice}\n\nOur team will contact you shortly to confirm your reservation.`);
-                
-                // Reset form
-                this.reset();
-                
-                // Reset min dates
-                document.getElementById('checkinDate').min = today;
-                document.getElementById('checkoutDate').min = '';
-            });
             
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -504,5 +450,57 @@
                 }
             });
         });
+
+
+        
     </script>
+    <script>
+$(document).ready(function () {
+
+    $('#bookRoomBtn').on('click', function () {
+
+        let formData = new FormData($('#roomBookingForm')[0]);
+        let alertBox = $('#bookingAlert');
+
+        $.ajax({
+            url: "{{ route('room.book') }}",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            success: function (res) {
+
+                alertBox.removeClass('d-none alert-danger alert-success');
+
+                if (res.status) {
+                    alertBox.addClass('alert-success').text(res.message);
+                    $('#roomBookingForm')[0].reset();
+                } else {
+                    alertBox.addClass('alert-danger').text(res.message);
+                }
+            },
+            error: function (xhr) {
+
+            let msg = 'Something went wrong. Please try again.';
+
+            if (xhr.responseJSON && xhr.responseJSON.message) {
+                msg = xhr.responseJSON.message; // <-- your custom message
+            }
+
+            alertBox
+                .removeClass('d-none alert-success')
+                .addClass('alert-danger')
+                .text(msg);
+        }
+        });
+
+    });
+
+});
+</script>
+
+
     @endsection

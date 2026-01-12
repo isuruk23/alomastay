@@ -70,7 +70,8 @@
                             <button class="btn btn-sm btn-success edit-btn" 
                                 data-id="{{ $room->id }}" 
                                 data-name="{{ $room->name }}" 
-                                data-price="{{ $room->price }}" 
+                                data-intro="{{ $room->intro }}" 
+                                data-price="{{ $room->price }}"
                                 data-active="{{ $room->is_active }}">Edit</button>
 
                             <a href="{{ route('rooms.destroy', $room->id) }}" 

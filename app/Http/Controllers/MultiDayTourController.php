@@ -29,14 +29,14 @@ class MultiDayTourController extends Controller
     {
     //   dd($request);
         $request->validate([
-            'country' => 'required',
             'name' => 'required|string|max:255',
-            'discount' => 'required|integer',
+            'discount' => 'nullable|integer',
             'days' => 'required|integer|min:1',
             'nights' => 'required|integer|min:1',
             'price' => 'required|numeric|min:1',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
+            'description' => 'required|string',
             'itinerary' => 'string',
             'includes' => 'string',
             'excludes' => 'string',
@@ -53,16 +53,33 @@ class MultiDayTourController extends Controller
         $slug=Str::lower($slugreplace);
         
         $data = $request->all();
+    
         $data['slug'] = $slug;
         
         // Handle image upload
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images/multi-tours', 'public');
+            $image = $request->file('image');
+            // create unique filename
+            $filename = time().'_'.$image->getClientOriginalName();
+            // move to public/tours
+            $image->move(public_path('tours'), $filename);
+            // save path for DB
+            $imagePath = 'tours/'.$filename;
+            $data['image'] = $imagePath;
         }
         if ($request->hasFile('banner')) {
-            $data['banner_image'] = $request->file('banner')->store('images/multi-tours/banner', 'public');
+            $banner = $request->file('banner');
+            // create unique filename
+            $filename = time().'_'.$banner->getClientOriginalName();
+            // move to public/tours
+            $banner->move(public_path('tours/banner'), $filename);
+            // save path for DB
+            $bannerPath = 'tours/banner/'.$filename;
+            $data['banner_image'] = $bannerPath;
         }
-
+       
+        
+       
         MultiDayTour::create($data);
 
         return redirect()->route('admin.multi_day_tours.index')->with('success', 'Tour created successfully.');
@@ -92,14 +109,14 @@ class MultiDayTourController extends Controller
        // dd($request->includes);
        
        $request->validate([
-        'country' => 'required',
         'name' => 'required|string|max:255',
-        'discount' => 'required|integer',
+        'discount' => 'nullable|integer',
         'days' => 'required|integer|min:1',
         'nights' => 'required|integer|min:1',
         'price' => 'required|numeric|min:1',
         'start_date' => 'required|date',
         'end_date' => 'nullable|date|after_or_equal:start_date',
+        'description' => 'required|string',
         'itinerary' => 'string',
         'includes' => 'string',
         'excludes' => 'string',
@@ -117,7 +134,7 @@ class MultiDayTourController extends Controller
 
         $tour = MultiDayTour::findOrFail($id);
         $tour->name = $request->name;
-        $tour->discount = $request->discount;
+        // $tour->discount = $request->discount;
         $tour->slogan = $request->slogan;
         $tour->summary = $request->summary;
         $tour->description = $request->description;
@@ -135,16 +152,33 @@ class MultiDayTourController extends Controller
      
 
               
+        // Handle image upload
         if ($request->hasFile('image')) {
-            $tour->image = $request->file('image')->store('images/multi-tours', 'public');
+            $image = $request->file('image');
+            // create unique filename
+            $filename = time().'_'.$image->getClientOriginalName();
+            // move to public/tours
+            $image->move(public_path('tours'), $filename);
+            // save path for DB
+            $imagePath = 'tours/'.$filename;
+            $tour->image = $imagePath;
         }
         if ($request->hasFile('banner')) {
-            $tour->banner_image = $request->file('banner')->store('images/multi-tours/banner', 'public');
+            $banner = $request->file('banner');
+            // create unique filename
+            $filename = time().'_'.$banner->getClientOriginalName();
+            // move to public/tours
+            $banner->move(public_path('tours/banner'), $filename);
+            // save path for DB
+            $bannerPath = 'tours/banner/'.$filename;
+            $tour->banner_image = $bannerPath;
         }
+
+       
         
         // Save the updated data
         $tour->update();
-        return redirect()->route('admin.multi_day_tours.index')->with('success', 'Tour updated successfully.');
+        return redirect()->route('multi_day_tours.index')->with('success', 'Tour updated successfully.');
     }
 
     /**

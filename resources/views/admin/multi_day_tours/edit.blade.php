@@ -1,14 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <h1>Edit Multi-Day Tour</h1>
 
     <form action="{{ route('multi_day_tours.update', $multiDayTour) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        @include('multi_day_tours.form', ['multiDayTour' => $multiDayTour])
+        @include('admin.multi_day_tours.form', ['multiDayTour' => $multiDayTour])
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
+  </div>
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.5.0/tinymce.min.js" integrity="sha512-KmEMNDKX2KDYPrBMr2MJj/JLgYK271k+P2341E5wvBMgepz1HS3wpc7r65hDXcp4Ul89omtSKIHxdk8VYHd9ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

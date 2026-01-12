@@ -46,62 +46,29 @@
             <p class="text-center mb-5">Choose from our exquisite selection of rooms and suites, each designed to provide the ultimate comfort and relaxation.</p>
             
             <div class="row g-4">
+                @foreach($rooms as $room)
                 <div class="col-md-6 col-lg-4">
                     <div class="card shadow-sm">
-                        <img src="{{ asset('public/images/room1.jpg') }}" 
-                             class="card-img-top" alt="Deluxe Room">
+                       
+                            @if ($room->image)
+                            <img src="{{ asset('public/' . $room->image) }}"  class="card-img-top" alt="{{ $room->name }}">
+                            @else
+                            <img src="{{ asset('public/images/logo-sm.png') }}"  class="card-img-top" alt="{{ $room->name }}">
+                            @endif
                         <div class="card-body">
-                            <h5 class="card-title gold-text">Deluxe Room</h5>
-                            <p class="card-text">Spacious room with garden view, king-size bed, and modern amenities for a comfortable stay.</p>
+                            <h5 class="card-title gold-text">{{ $room->name }}</h5>
+                            <p class="card-text">{{ $room->intro }}</p>
                             <div class="mb-3">
                                 <i class="bi bi-wifi gold-text me-2"></i>
                                 <i class="bi bi-tv gold-text me-2"></i>
                                 <i class="bi bi-cup gold-text me-2"></i>
                                 <i class="bi bi-water gold-text"></i>
                             </div>
-                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                            <a href="/room-details/{{ $room->id }}" class="btn btn-primary w-100">View Details</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card shadow-sm">
-                        <img src="{{ asset('public/images/room2.jpg') }}" 
-                             class="card-img-top" alt="Executive Suite">
-                        <div class="card-body">
-                            <h5 class="card-title gold-text">Executive Suite</h5>
-                            <p class="card-text">Luxurious suite with separate living area, balcony overlooking the pool, and premium amenities.</p>
-                            <div class="mb-3">
-                                <i class="bi bi-wifi gold-text me-2"></i>
-                                <i class="bi bi-tv gold-text me-2"></i>
-                                <i class="bi bi-cup gold-text me-2"></i>
-                                <i class="bi bi-water gold-text me-2"></i>
-                                <i class="bi bi-bathtub gold-text"></i>
-                            </div>
-                            <a href="#" class="btn btn-primary w-100">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card shadow-sm">
-                        <img src="{{ asset('public/images/room3.jpg') }}" 
-                             class="card-img-top" alt="Presidential Suite">
-                        <div class="card-body">
-                            <h5 class="card-title gold-text">Presidential Suite</h5>
-                            <p class="card-text">Our most exclusive offering with panoramic views, private butler service, and lavish interiors.</p>
-                            <div class="mb-3">
-                                <i class="bi bi-wifi gold-text me-2"></i>
-                                <i class="bi bi-tv gold-text me-2"></i>
-                                <i class="bi bi-cup gold-text me-2"></i>
-                                <i class="bi bi-water gold-text me-2"></i>
-                                <i class="bi bi-bathtub gold-text me-2"></i>
-                                <i class="bi bi-person-badge gold-text"></i>
-                            </div>
-                            <a href="#" class="btn btn-primary w-100">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                 @endforeach
             </div>
         </div>
     </section>
@@ -193,70 +160,23 @@
             <!-- Swiper Slider for Attractions -->
             <div class="swiper attractionsSwiper">
                 <div class="swiper-wrapper">
-                    <!-- Attraction 1 -->
+                    @foreach ($thingstodos as $thingstodo)
                     <div class="swiper-slide">
                         <div class="attraction-card bg-white shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="attraction-img" alt="Sigiriya Rock Fortress">
+                          
+                                @if ($thingstodo->image)
+                                <img src="{{ asset('public/' . $thingstodo->image) }}"  class="attraction-img" alt="{{ $thingstodo->title }}">
+                                @else
+                                <img src="{{ asset('public/images/logo-sm.png') }}"  class="attraction-img" alt="{{ $thingstodo->title }}">
+                                @endif
                             <div class="p-4">
-                                <h5>Sigiriya Rock Fortress</h5>
+                                <h5>{{ $thingstodo->title }}</h5>
                                 <p class="text-muted"><i class="bi bi-geo-alt"></i> 15 km from hotel</p>
-                                <p class="small">Ancient rock fortress and palace ruins with famous frescoes, a UNESCO World Heritage Site.</p>
+                                <p class="small">{{ $thingstodo->description }}</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Attraction 2 -->
-                    <div class="swiper-slide">
-                        <div class="attraction-card bg-white shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1593693399746-69f4d2261c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="attraction-img" alt="Dambulla Cave Temple">
-                            <div class="p-4">
-                                <h5>Dambulla Cave Temple</h5>
-                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 20 km from hotel</p>
-                                <p class="small">Largest and best-preserved cave temple complex in Sri Lanka with over 150 Buddha statues.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Attraction 3 -->
-                    <div class="swiper-slide">
-                        <div class="attraction-card bg-white shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" 
-                                 class="attraction-img" alt="Minneriya National Park">
-                            <div class="p-4">
-                                <h5>Minneriya National Park</h5>
-                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 25 km from hotel</p>
-                                <p class="small">Famous for "The Gathering" where hundreds of wild elephants congregate during dry season.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Attraction 4 -->
-                    <div class="swiper-slide">
-                        <div class="attraction-card bg-white shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1558349691-1c0c6a17efc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="attraction-img" alt="Polonnaruwa Ancient City">
-                            <div class="p-4">
-                                <h5>Polonnaruwa Ancient City</h5>
-                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 40 km from hotel</p>
-                                <p class="small">Medieval capital of Sri Lanka with well-preserved ruins of palaces, temples, and statues.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Attraction 5 -->
-                    <div class="swiper-slide">
-                        <div class="attraction-card bg-white shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="attraction-img" alt="Kandy Temple of the Tooth">
-                            <div class="p-4">
-                                <h5>Temple of the Sacred Tooth Relic</h5>
-                                <p class="text-muted"><i class="bi bi-geo-alt"></i> 75 km from hotel</p>
-                                <p class="small">One of Buddhism's most sacred sites, housing the relic of the tooth of the Buddha.</p>
-                            </div>
-                        </div>
-                    </div>
+                     @endforeach
                 </div>
                 
                 <!-- Navigation buttons -->
@@ -280,85 +200,31 @@
             <!-- Swiper Slider for Tours -->
             <div class="swiper toursSwiper">
                 <div class="swiper-wrapper">
-                    <!-- Tour 1 -->
+                    <!-- Tour -->
+                     @foreach ($mtours as $tour)
                     <div class="swiper-slide">
                         <div class="tour-card bg-white shadow-sm position-relative">
                             <div class="tour-badge">$450</div>
-                            <img src="https://images.unsplash.com/photo-1552465011-b4e30bf7349d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
-                                 class="tour-img" alt="Cultural Triangle Tour">
+                          
+                                @if ($tour->image)
+                                <img src="{{ asset('public/' . $tour->image) }}"  class="tour-img" alt="{{ $tour->name }}">
+                                @else
+                                <img src="{{ asset('public/images/logo-sm.png') }}"  class="tour-img" alt="{{ $tour->name }}">
+                                @endif
                             <div class="p-4">
-                                <h5>Cultural Triangle Explorer</h5>
-                                <p class="text-muted"><i class="bi bi-clock"></i> 3 Days / 2 Nights</p>
+                                <h5>{{ $tour->name }}</h5>
+                                <p class="text-muted"><i class="bi bi-clock"></i> {{ $tour->days }} Days / {{ $tour->nights }} Nights</p>
                                 <div class="mb-3">
                                     <span class="badge bg-light text-dark me-1"><i class="bi bi-building"></i> Culture</span>
                                     <span class="badge bg-light text-dark me-1"><i class="bi bi-camera"></i> Photography</span>
                                     <span class="badge bg-light text-dark"><i class="bi bi-person-walking"></i> History</span>
                                 </div>
-                                <p class="small">Visit Sigiriya, Dambulla, and Polonnaruwa with expert guides, inclusive of accommodation and meals.</p>
-                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
+                                <p class="small">{{ $tour->slogan }}</p>
+                                <a href="/package-details/{{ $tour->id }}" class="btn btn-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Tour 2 -->
-                    <div class="swiper-slide">
-                        <div class="tour-card bg-white shadow-sm position-relative">
-                            <div class="tour-badge">$320</div>
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="tour-img" alt="Wildlife Safari">
-                            <div class="p-4">
-                                <h5>Wildlife Safari Adventure</h5>
-                                <p class="text-muted"><i class="bi bi-clock"></i> 2 Days / 1 Night</p>
-                                <div class="mb-3">
-                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-tropical-storm"></i> Wildlife</span>
-                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-camera"></i> Safari</span>
-                                    <span class="badge bg-light text-dark"><i class="bi bi-binoculars"></i> Adventure</span>
-                                </div>
-                                <p class="small">Jeep safaris in Minneriya and Kaudulla national parks to witness elephants in their natural habitat.</p>
-                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tour 3 -->
-                    <div class="swiper-slide">
-                        <div class="tour-card bg-white shadow-sm position-relative">
-                            <div class="tour-badge">$280</div>
-                            <img src="https://images.unsplash.com/photo-1593693399746-69f4d2261c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="tour-img" alt="Temple Trail">
-                            <div class="p-4">
-                                <h5>Sacred Temple Trail</h5>
-                                <p class="text-muted"><i class="bi bi-clock"></i> 1 Day</p>
-                                <div class="mb-3">
-                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-building"></i> Culture</span>
-                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-person-walking"></i> Pilgrimage</span>
-                                    <span class="badge bg-light text-dark"><i class="bi bi-flower1"></i> Spiritual</span>
-                                </div>
-                                <p class="small">A spiritual journey to Dambulla Cave Temple and Temple of the Tooth in Kandy with meditation sessions.</p>
-                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tour 4 -->
-                    <div class="swiper-slide">
-                        <div class="tour-card bg-white shadow-sm position-relative">
-                            <div class="tour-badge">$520</div>
-                            <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                                 class="tour-img" alt="Hill Country Escape">
-                            <div class="p-4">
-                                <h5>Hill Country Escape</h5>
-                                <p class="text-muted"><i class="bi bi-clock"></i> 4 Days / 3 Nights</p>
-                                <div class="mb-3">
-                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-mountain"></i> Scenery</span>
-                                    <span class="badge bg-light text-dark me-1"><i class="bi bi-cup-hot"></i> Tea</span>
-                                    <span class="badge bg-light text-dark"><i class="bi bi-water"></i> Waterfalls</span>
-                                </div>
-                                <p class="small">Explore Nuwara Eliya tea plantations, Horton Plains, and enjoy cool climate with luxury accommodation.</p>
-                                <a href="#" class="btn btn-primary w-100">Book Tour</a>
-                            </div>
-                        </div>
-                    </div>
+                     @endforeach
                 </div>
                 
                 <!-- Navigation buttons -->

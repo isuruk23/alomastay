@@ -119,6 +119,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
     <!-- Custom JavaScript -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
       @yield('script')
     
 </body>
