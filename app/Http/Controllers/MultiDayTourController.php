@@ -178,7 +178,7 @@ class MultiDayTourController extends Controller
         
         // Save the updated data
         $tour->update();
-        return redirect()->route('multi_day_tours.index')->with('success', 'Tour updated successfully.');
+        return redirect()->route('admin.multi_day_tours.index')->with('success', 'Tour updated successfully.');
     }
 
     /**
