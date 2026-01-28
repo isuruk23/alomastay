@@ -16,7 +16,7 @@
             @endif
         </div>
 
-        <!--div class="mb-3">
+        <div class="mb-3">
             <label for="slogan" class="form-label">Slogan</label>
             <input type="text" name="slogan" class="form-control form-control-sm" value="{{ old('slogan', $multiDayTour->slogan ?? '') }}">
             @if ($errors->has('slogan'))
@@ -24,7 +24,7 @@
             @endif
         </div>
 
-        <div class="mb-3">
+        <!--div class="mb-3">
             <label for="summary" class="form-label">Summary</label>
             <textarea name="summary" class="form-control form-control-sm">{{ old('summary', $multiDayTour->summary ?? '') }}</textarea>
             @if ($errors->has('summary'))

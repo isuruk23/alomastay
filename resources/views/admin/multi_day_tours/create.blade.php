@@ -11,7 +11,7 @@
             {{ session('success') }}
         </div>
     @endif
-    <form action="{{ route('multi_day_tours.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.multi_day_tours.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @include('admin.multi_day_tours.form')
         <button type="submit" class="btn btn-primary">Save</button>
