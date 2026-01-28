@@ -11,9 +11,9 @@
     @endif
     
 
-    <a href="{{ route('thingstodo.edit', $thingstodo->id) }}" class="btn btn-warning">Edit</a>
+    <a href="{{ route('admin.thingstodo.edit', $thingstodo->id) }}" class="btn btn-warning">Edit</a>
 
-    <form action="{{ route('thingstodo.destroy', $thingstodo->id) }}" method="POST" style="display:inline;">
+    <form action="{{ route('admin.thingstodo.destroy', $thingstodo->id) }}" method="POST" style="display:inline;">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>

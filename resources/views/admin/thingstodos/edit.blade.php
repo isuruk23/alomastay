@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h2>Edit Things to do</h2>
-    <form action="{{ route('thingstodo.update', $thingstodo->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.thingstodo.update', $thingstodo->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">

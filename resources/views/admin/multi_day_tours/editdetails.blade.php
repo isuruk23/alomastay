@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<div class="container">
     <div class="row">
       
         <div class="col-md-6">
@@ -11,7 +11,7 @@
                 {{ session('success') }}
             </div>
         @endif
-        <form action="{{ route('multiday_tours_details.update', $MultiDayTourDetails) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.multiday_tours_details.update', $MultiDayTourDetails) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -78,7 +78,8 @@
         </form>
         </div>
     </div>
-    <!-- <a href="{{ route('multi_day_tours.index') }}" class="btn btn-secondary">Back</a> -->
+    <!-- <a href="{{ route('admin.multi_day_tours.index') }}" class="btn btn-secondary">Back</a> -->
+</div>
 @endsection
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.5.0/tinymce.min.js" integrity="sha512-KmEMNDKX2KDYPrBMr2MJj/JLgYK271k+P2341E5wvBMgepz1HS3wpc7r65hDXcp4Ul89omtSKIHxdk8VYHd9ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

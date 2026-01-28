@@ -14,12 +14,17 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('no')->nullable();
             $table->string('intro')->nullable();
             $table->string('overview')->nullable();
-            $table->integer('size')->nullable();
             $table->decimal('price', 10)->nullable();
+            $table->string('size')->nullable();
+            $table->string('bed')->nullable();
+            $table->string('occupancy')->nullable();
+            $table->string('view')->nullable();
+            $table->string('floor')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

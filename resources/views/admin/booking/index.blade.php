@@ -13,7 +13,7 @@
     <div class="card mb-4">
         <div class="card-header" id="form-title">Add Booking</div>
         <div class="card-body">
-            <form action="{{ route('booking.store') }}" method="POST" id="booking-form">
+            <form action="{{ route('admin.booking.store') }}" method="POST" id="booking-form">
                 @csrf
                 <input type="hidden" name="booking_id" id="booking_id">
                 
@@ -100,7 +100,7 @@
                         data-check_out="{{ $b->check_out }}"
                         data-status="{{ $b->status }}">Edit</button>
 
-                    <a href="{{ route('booking.destroy', $b->id) }}" class="btn btn-sm btn-danger"
+                    <a href="{{ route('admin.booking.destroy', $b->id) }}" class="btn btn-sm btn-danger"
                         onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>

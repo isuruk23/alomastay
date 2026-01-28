@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Booking;
 use App\Models\MultiDayTour;
+use App\Models\Thingstodo;
 
 class AdminDashboardController extends Controller
 {
@@ -14,7 +15,8 @@ class AdminDashboardController extends Controller
         $rooms_count = Room::count();          // Total rooms
         $bookings_count = Booking::count();    // Total bookings
         $package_count = MultiDayTour::count();        // Total packages
+        $todo_count = Thingstodo::count();        // Total Destination
 
-        return view('admin.dashboard', compact('rooms_count','bookings_count','package_count'));
+        return view('admin.dashboard', compact('rooms_count','bookings_count','package_count','todo_count'));
     }
 }

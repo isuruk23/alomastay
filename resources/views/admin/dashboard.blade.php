@@ -27,7 +27,7 @@
                 <div class="card-body">
                   <p>{{ $package_count }}</p>
                 </div>
-                <div class="card-footer"><a href="/multi_day_tours">view</a></div>
+                <div class="card-footer"><a href="{{ route('admin.multi_day_tours.index') }}">view</a></div>
             </div>
         </div>
         <div class="col-md-3">
@@ -37,7 +37,7 @@
                 <div class="card-body">
                   <p>{{ $rooms_count }}</p>
                 </div>
-                <div class="card-footer"><a href="/admin/room">view</a></div>
+                <div class="card-footer"><a href="{{ route('admin.rooms.index') }}">view</a></div>
             </div>
         </div>
         <div class="col-md-3">
@@ -47,7 +47,17 @@
                 <div class="card-body">
                   <p>{{ $bookings_count }}</p>
                 </div>
-                <div class="card-footer"><a href="/admin/booking">view</a></div>
+                <div class="card-footer"><a href="{{ route('admin.booking.index') }}">view</a></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">Things to do</div>
+
+                <div class="card-body">
+                  <p>{{ $todo_count }}</p>
+                </div>
+                <div class="card-footer"><a href="{{ route('admin.thingstodo.index') }}">view</a></div>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ class ThingstodoController extends Controller
    public function index()
     {
         $thingstodos = Thingstodo::all();
-        return view('thingstodos.index', compact('thingstodos'));
+        return view('admin.thingstodos.index', compact('thingstodos'));
     }
 
     /**
@@ -18,7 +18,7 @@ class ThingstodoController extends Controller
      */
     public function create()
     {
-        return view('thingstodos.create');
+        return view('admin.thingstodos.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class ThingstodoController extends Controller
 
         Thingstodo::create($data);
 
-        return redirect()->route('thingstodo.index')->with('success', 'thingstodo created successfully.');
+        return redirect()->route('admin.thingstodo.index')->with('success', 'thingstodo created successfully.');
     
     }
 
@@ -56,7 +56,7 @@ class ThingstodoController extends Controller
     public function show($id)
     {
         $thingstodo = Thingstodo::findOrFail($id);
-        return view('thingstodos.show', compact('thingstodo'));
+        return view('admin.thingstodos.show', compact('thingstodo'));
     }
 
     /**
@@ -65,7 +65,7 @@ class ThingstodoController extends Controller
     public function edit($id)
     {
         $thingstodo = Thingstodo::findOrFail($id);
-        return view('thingstodos.edit', compact('thingstodo'));
+        return view('admin.thingstodos.edit', compact('thingstodo'));
     }
 
     /**
@@ -96,7 +96,7 @@ class ThingstodoController extends Controller
 
         $thingstodo->update($data);
 
-        return redirect()->route('thingstodo.index')->with('success', 'thingstodo updated successfully.');
+        return redirect()->route('admin.thingstodo.index')->with('success', 'thingstodo updated successfully.');
     
     }
 
@@ -113,7 +113,7 @@ class ThingstodoController extends Controller
         
         $thingstodo->delete();
 
-        return redirect()->route('thingstodo.index')->with('success', 'thingstodo deleted successfully.');
+        return redirect()->route('admin.thingstodo.index')->with('success', 'thingstodo deleted successfully.');
     
     }
 }

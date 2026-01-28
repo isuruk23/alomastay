@@ -19,28 +19,117 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-            <form action="{{ route('rooms.store') }}" method="POST" id="room-form" enctype="multipart/form-data">
-                @csrf
-                <input type="hidden" name="room_id" id="room_id">
-                <div class="mb-3">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Room Name" required>
-                </div>
-                 <div class="mb-3">
-                    <input type="text" name="intro" id="intro" class="form-control" placeholder="Room intro" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" name="price" id="price" class="form-control" placeholder="Room price" required>
-                </div>
-                <div class="mb-3">
-                    <input type="file" name="image" id="image" class="form-control" placeholder="Room image" required>
-                </div>
-                <div class="form-check mb-3">
-                    <input type="checkbox" name="status" id="status" class="form-check-input" checked>
+            <form action="{{ route('admin.rooms.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        <div class="row">
+
+            {{-- Room Name --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="name"
+                    class="form-control @error('name') is-invalid @enderror"
+                    value="{{ old('name') }}" placeholder="Room Name" >
+                @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Room No --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="no"
+                    class="form-control @error('no') is-invalid @enderror"
+                    value="{{ old('no') }}" placeholder="Room No" >
+                @error('no') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Intro --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="intro"
+                    class="form-control @error('intro') is-invalid @enderror"
+                    value="{{ old('intro') }}" placeholder="Room Intro" >
+                @error('intro') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Price --}}
+            <div class="col-md-6 mb-3">
+                <input type="number" step="0.01" name="price"
+                    class="form-control @error('price') is-invalid @enderror"
+                    value="{{ old('price') }}" placeholder="Room Price" >
+                @error('price') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Size --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="size"
+                    class="form-control @error('size') is-invalid @enderror"
+                    value="{{ old('size') }}" placeholder="Room Size" >
+                @error('size') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Bed --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="bed"
+                    class="form-control @error('bed') is-invalid @enderror"
+                    value="{{ old('bed') }}" placeholder="Bed Type" >
+                @error('bed') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Occupancy --}}
+            <div class="col-md-6 mb-3">
+                <input type="number" name="occupancy"
+                    class="form-control @error('occupancy') is-invalid @enderror"
+                    value="{{ old('occupancy') }}" placeholder="Occupancy" >
+                @error('occupancy') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- View --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="view"
+                    class="form-control @error('view') is-invalid @enderror"
+                    value="{{ old('view') }}" placeholder="View" >
+                @error('view') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Floor --}}
+            <div class="col-md-6 mb-3">
+                <input type="text" name="floor"
+                    class="form-control @error('floor') is-invalid @enderror"
+                    value="{{ old('floor') }}" placeholder="Floor" >
+                @error('floor') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Main Image --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Main Image</label>
+                <input type="file" name="image"
+                    class="form-control @error('image') is-invalid @enderror">
+                @error('image') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Gallery Images --}}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Gallery Images</label>
+                <input type="file" name="images[]"
+                    class="form-control @error('images.*') is-invalid @enderror" multiple>
+                @error('images.*') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            {{-- Status --}}
+            <div class="col-md-6 mb-3 d-flex align-items-center">
+                <div class="form-check mt-4">
+                    <input type="checkbox" name="status" class="form-check-input"
+                        {{ old('status', true) ? 'checked' : '' }}>
                     <label class="form-check-label">Active</label>
                 </div>
-                <button class="btn btn-primary" type="submit" id="submit-btn">Add Room</button>
-                <button type="button" class="btn btn-secondary" id="cancel-btn" style="display:none;">Cancel</button>
-            </form>
+            </div>
+
+            {{-- Submit --}}
+            <div class="col-12">
+                <button class="btn btn-primary">Add Room</button>
+                <a href="{{ route('admin.rooms.index') }}" class="btn btn-secondary">Back</a>
+            </div>
+
+        </div>
+    </form>
+
             </div>
             <div class="col-6">
                  <!-- Rooms Table -->
@@ -67,14 +156,10 @@
                         </td>
                         <td>{{ $room->is_active ? 'Yes' : 'No' }}</td>
                         <td>
-                            <button class="btn btn-sm btn-success edit-btn" 
-                                data-id="{{ $room->id }}" 
-                                data-name="{{ $room->name }}" 
-                                data-intro="{{ $room->intro }}" 
-                                data-price="{{ $room->price }}"
-                                data-active="{{ $room->is_active }}">Edit</button>
+                            <a href="{{ route('admin.rooms.edit', $room->id) }}" class="btn btn-sm btn-success edit-btn" 
+                                >Edit</a>
 
-                            <a href="{{ route('rooms.destroy', $room->id) }}" 
+                            <a href="{{ route('admin.rooms.destroy', $room->id) }}" 
                                 class="btn btn-sm btn-danger" 
                                 onclick="return confirm('Are you sure?')">Delete</a>
                         </td>
@@ -91,48 +176,5 @@
 </div>
 
 <!-- JS to load data into form -->
-<script>
-    const editButtons = document.querySelectorAll('.edit-btn');
-    const formTitle = document.getElementById('form-title');
-    const submitBtn = document.getElementById('submit-btn');
-    const cancelBtn = document.getElementById('cancel-btn');
-    const roomIdInput = document.getElementById('room_id');
-    const nameInput = document.getElementById('name');
-    const introInput = document.getElementById('intro');
-    const priceInput = document.getElementById('price');
-    const isActiveInput = document.getElementById('is_active');
 
-    editButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const id = btn.dataset.id;
-            const name = btn.dataset.name;
-            const intro = btn.dataset.intro;
-            const price = btn.dataset.price;
-            const active = btn.dataset.active;
-
-            formTitle.innerText = 'Edit Room';
-            submitBtn.innerText = 'Update Room';
-            cancelBtn.style.display = 'inline-block';
-
-            roomIdInput.value = id;
-            nameInput.value = name;
-            introInput.value = intro;
-            priceInput.value = price;
-            isActiveInput.checked = active == 1 ? true : false;
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    });
-
-    cancelBtn.addEventListener('click', () => {
-        formTitle.innerText = 'Add Room';
-        submitBtn.innerText = 'Add Room';
-        cancelBtn.style.display = 'none';
-        roomIdInput.value = '';
-        nameInput.value = '';
-        introInput.value = '';
-        priceInput.value = '';
-        isActiveInput.checked = true;
-    });
-</script>
 @endsection

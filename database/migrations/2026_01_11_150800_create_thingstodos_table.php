@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->bigInteger('city');
+            $table->string('distance');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

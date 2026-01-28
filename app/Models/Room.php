@@ -11,10 +11,21 @@ class Room extends Model
 
      protected $fillable = [
         'name',
+        'no',
         'intro',
         'overview',
         'price',
+        'size',
+        'bed',
+        'occupancy',
+        'view',
+        'floor',
         'image',
         'is_active',
     ];
+
+    public function images()
+    {
+        return $this->hasMany(RoomImage::class);
+    }
 }

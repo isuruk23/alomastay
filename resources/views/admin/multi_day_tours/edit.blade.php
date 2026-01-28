@@ -4,7 +4,7 @@
 <div class="container">
     <h1>Edit Multi-Day Tour</h1>
 
-    <form action="{{ route('multi_day_tours.update', $multiDayTour) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.multi_day_tours.update', $multiDayTour) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         @include('admin.multi_day_tours.form', ['multiDayTour' => $multiDayTour])

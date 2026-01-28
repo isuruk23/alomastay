@@ -17,12 +17,13 @@ class DatabaseSeeder extends Seeder
          User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'is_admin' => 1,
+            'role' => 'admin',
             'password' => Hash::make('@gmail.com'), // set your password here
         ]);
 
         $this->call(RoomSeeder::class);
         $this->call(CitiesSeeder::class);
         $this->call(ThingsToDoSeeder::class);
+        $this->call(MultiDayTourSeeder::class);
     }
 }

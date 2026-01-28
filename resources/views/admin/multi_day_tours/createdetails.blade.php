@@ -33,8 +33,8 @@
                 <td>{{ $MultiDayTourDetail->title }}</td>
                 <td>
           
-                <a href="{{ route('multiday_tours_details.edit', $MultiDayTourDetail->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                <form action="{{ route('multiday_tours_details.destroy', $MultiDayTourDetail->id) }}" method="POST" style="display: inline;">
+                <a href="{{ route('admin.multiday_tours_details.edit', $MultiDayTourDetail->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                <form action="{{ route('admin.multiday_tours_details.destroy', $MultiDayTourDetail->id) }}" method="POST" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
@@ -48,7 +48,7 @@
                 {{ session('success') }}
             </div>
         @endif
-        <form action="{{  route('multiday_tours_details.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{  route('admin.multiday_tours_details.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             
 
@@ -116,7 +116,7 @@
         </form>
         </div>
     </div>
-    <a href="{{ route('multi_day_tours.index') }}" class="btn btn-secondary">Back</a>
+    <a href="{{ route('admin.multi_day_tours.index') }}" class="btn btn-secondary">Back</a>
 </div>
     @endsection
 @section('script')

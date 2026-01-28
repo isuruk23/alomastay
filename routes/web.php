@@ -30,21 +30,30 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 // Only admin can access
-Route::middleware(['auth','admin'])->group(function(){
-    Route::middleware('auth')->get('dashboard', [AdminDashboardController::class,'index'])->name('dashboard');
-    Route::middleware('auth')->get('/room', [RoomController::class,'index'])->name('room');
-    Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
-    Route::post('/rooms/{id}/update', [RoomController::class, 'update'])->name('rooms.update');
-    Route::get('/rooms/{id}/delete', [RoomController::class, 'destroy'])->name('rooms.destroy');
+Route::prefix('admin')
+    ->middleware(['auth', 'admin'])
+    ->name('admin.')
+    ->group(function () {
+    // Route::middleware('auth')->get('dashboard', [AdminDashboardController::class,'index'])->name('dashboard');
+      Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    // Route::middleware('auth')->get('/room', [RoomController::class,'index'])->name('room');
+    // Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
+    // Route::post('/rooms/{id}/update', [RoomController::class, 'update'])->name('rooms.update');
+    // Route::get('/rooms/{id}/delete', [RoomController::class, 'destroy'])->name('rooms.destroy');
 
-    Route::middleware('auth')->get('/admin/booking', [BookingController::class,'index'])->name('admin.booking');
-    Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
-    Route::post('/booking/{id}/update', [BookingController::class, 'update'])->name('booking.update');
-    Route::get('/booking/{id}/delete', [BookingController::class, 'destroy'])->name('booking.destroy');
+    // Route::middleware('auth')->get('/admin/booking', [BookingController::class,'index'])->name('admin.booking');
+    // Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+    // Route::post('/booking/{id}/update', [BookingController::class, 'update'])->name('booking.update');
+    // Route::get('/booking/{id}/delete', [BookingController::class, 'destroy'])->name('booking.destroy');
 
     Route::resource('multi_day_tours', MultiDayTourController::class);
     Route::resource('multiday_tours_details', MultiDayTourDetailsController::class);
     Route::resource('thingstodo', ThingstodoController::class);
+    Route::resource('booking', BookingController::class);
+    Route::resource('rooms', RoomController::class);
+    Route::delete('/room-image/{id}', [RoomController::class, 'deleteImage'])
+            ->name('room.image.delete');
+    
 
     });
 

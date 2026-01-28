@@ -16,5 +16,5 @@
     @if ($multiDayTour->banner_image)
         <p><img src="{{ asset('public/storage/' . $multiDayTour->banner_image) }}" alt="{{ $multiDayTour->name }}" width="200"></p>
     @endif
-    <a href="{{ route('day_tours.index') }}" class="btn btn-secondary">Back</a>
+    <a href="{{ route('admin.multi_day_tours.index') }}" class="btn btn-secondary">Back</a>
 @endsection
