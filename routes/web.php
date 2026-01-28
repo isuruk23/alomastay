@@ -9,7 +9,7 @@ use App\Http\Controllers\ThingstodoController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\AdminController;
+
 
 use App\Http\Controllers\Auth\LoginController;
 
@@ -36,7 +36,7 @@ Route::prefix('admin')
     ->name('admin.')
     ->group(function () {
     // Route::middleware('auth')->get('dashboard', [AdminDashboardController::class,'index'])->name('dashboard');
-       Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
+       Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     // Route::middleware('auth')->get('/room', [RoomController::class,'index'])->name('room');
     // Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
     // Route::post('/rooms/{id}/update', [RoomController::class, 'update'])->name('rooms.update');
