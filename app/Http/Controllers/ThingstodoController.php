@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Thingstodo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ThingstodoController extends Controller
 {
@@ -39,8 +40,15 @@ class ThingstodoController extends Controller
         $data['slug'] = $slug;
 
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images/thingstodo', 'public');
+         if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            // create unique filename
+            $filename = time().'_'.$image->getClientOriginalName();
+            // move to public/tours
+            $image->move(public_path('thingstodo'), $filename);
+            // save path for DB
+            $imagePath = 'thingstodo/'.$filename;
+            $data['image'] = $imagePath;
         }
     
 
@@ -89,8 +97,15 @@ class ThingstodoController extends Controller
         $slug=Str::lower($slugreplace);
         $data['slug'] = $slug;
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images/thingstodo', 'public');
+         if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            // create unique filename
+            $filename = time().'_'.$image->getClientOriginalName();
+            // move to public/tours
+            $image->move(public_path('thingstodo'), $filename);
+            // save path for DB
+            $imagePath = 'thingstodo/'.$filename;
+            $data['image'] = $imagePath;
         }
      
 
