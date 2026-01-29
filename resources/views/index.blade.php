@@ -114,7 +114,7 @@
             <h2 class="section-title">Restaurant & Dining</h2>
             <div class="row align-items-center mt-5">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="{{ asset('public/images/dining.jpg') }}" 
+                    <img src="{{ asset('public/images/dining-area.jpg') }}" 
                          alt="Aloma Stay Restaurant" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6">
@@ -307,86 +307,95 @@
             <p class="text-center mb-5">A visual journey through Aloma Stay's world of luxury</p>
             
             <div class="row">
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 gallery-box rooms">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/1.jpg') }}" 
-                             class="img-fluid rounded" alt="Hotel Pool">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/room/1.jpg') }}"
+                            class="img-fluid rounded" alt="Aloma Stay's Room">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 gallery-box rooms">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/2.jpg') }}" 
-                             class="img-fluid rounded" alt="Luxury Suite">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/room/2.jpg') }}"
+                            class="img-fluid rounded" alt="Hotel Pool">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 gallery-box rooms">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/3.jpg') }}" 
-                             class="img-fluid rounded" alt="Restaurant">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/room/3.jpg') }}"
+                            class="img-fluid rounded" alt="Hotel Room">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+
+                <div class="col-md-3 mb-4 gallery-box rooms">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/4.jpg') }}" 
-                             class="img-fluid rounded" alt="Wildlife Tour">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/room/4.jpg') }}"
+                            class="img-fluid rounded" alt="Luxury Suite">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+
+                <div class="col-md-3 mb-4 gallery-box dining">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/5.jpg') }}" 
-                             class="img-fluid rounded" alt="Wildlife Tour">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/dining/1.jpg') }}"
+                            class="img-fluid rounded" alt="Restaurant">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 gallery-box dining">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/6.jpg') }}" 
-                             class="img-fluid rounded" alt="Wildlife Tour">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/dining/2.jpg') }}"
+                            class="img-fluid rounded" alt="Restaurant">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+
+                <div class="col-md-3 mb-4 gallery-box attractions">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/7.jpg') }}" 
-                             class="img-fluid rounded" alt="Wildlife Tour">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/attractions/1.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4 gallery-box attractions">
                     <div class="gallery-item">
-                        <img src="{{ asset('public/images/gallery/8.jpg') }}" 
-                             class="img-fluid rounded" alt="Wildlife Tour">
-                        <div class="gallery-overlay rounded">
-                            <i class="bi bi-search text-white fs-1"></i>
-                        </div>
+                        <img src="{{ asset('public/images/gallery/attractions/2.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
                     </div>
                 </div>
+
+                <div class="col-md-3 mb-4 gallery-box resort">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/resort/1.jpg') }}"
+                            class="img-fluid rounded" alt="Resort">
+                    </div>
+                </div>
+                 <div class="col-md-3 mb-4 gallery-box resort">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/resort/2.jpg') }}"
+                            class="img-fluid rounded" alt="Resort">
+                    </div>
+                </div>
+                 <div class="col-md-3 mb-4 gallery-box resort">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/resort/3.jpg') }}"
+                            class="img-fluid rounded" alt="Resort">
+                    </div>
+                </div>
+                 <div class="col-md-3 mb-4 gallery-box resort">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/resort/4.jpg') }}"
+                            class="img-fluid rounded" alt="Resort">
+                    </div>
+                </div>
+
+                
+
             </div>
             
             <!-- Gallery categories -->
             <div class="text-center mt-3">
-                <a href="#" class="btn btn-outline-primary me-2">Rooms</a>
-                <a href="#" class="btn btn-outline-primary me-2">Dining</a>
-                <a href="#" class="btn btn-outline-primary me-2">Tours</a>
-                <a href="#" class="btn btn-outline-primary">Attractions</a>
+                <button class="btn btn-outline-primary me-2 filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="resort">Resort</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="rooms">Rooms</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="dining">Dining</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="tours">Tours</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="attractions">Attractions</button>
             </div>
         </div>
     </section>
@@ -520,6 +529,29 @@
     
 @endsection
 @section('script')
+<script>
+$(document).ready(function () {
+
+    $('.filter-btn').click(function () {
+
+        let filter = $(this).data('filter');
+
+        // active button style
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+
+        if (filter === 'all') {
+            $('.gallery-box').fadeIn(300);
+        } else {
+            $('.gallery-box').hide();
+            $('.' + filter).fadeIn(300);
+        }
+
+    });
+
+});
+</script>
+
 <script>
         // Initialize Swiper sliders
         document.addEventListener('DOMContentLoaded', function() {

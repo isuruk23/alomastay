@@ -130,6 +130,11 @@
             color: white;
             transform: translateY(-2px);
         }
+        #gallery .active{
+            color: var(--light-gray);
+            background-color: var(--warm-champagne);
+            border: 2px solid var(--gold-bronze);
+        }
         
         /* Section Styling */
         .section-title {
