@@ -35,6 +35,7 @@ class ThingstodoController extends Controller
         ]);
         $data = $request->all();
 
+
         $slugreplace = str_replace(' ', '-', $request->title);
         $slug=Str::lower($slugreplace);
         $data['slug'] = $slug;
@@ -107,6 +108,7 @@ class ThingstodoController extends Controller
             $imagePath = 'thingstodo/'.$filename;
             $data['image'] = $imagePath;
         }
+        
      
 
         $thingstodo->update($data);
