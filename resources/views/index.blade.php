@@ -5,20 +5,73 @@
 
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h1 class="display-3 fw-bold">Aloma Stay</h1>
-                    <p class="lead">Where Comfort Meets Timeless Elegance</p>
-                    <div class="mt-4">
-                        <a href="/rooms" class="btn btn-primary btn-lg me-3">Book Your Stay</a>
-                        <a href="/rooms" class="btn btn-outline-primary btn-lg">Explore Rooms</a>
+   <section class="hero p-0" id="home">
+    <div id="heroCarousel" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner w-100">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background:url('{{ asset('public/images/slider/1.jpg') }}') center/cover no-repeat; height:90vh;">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center text-center text-white">
+                        <div class="col-lg-8">
+                            <h1 class="display-3 fw-bold">Aloma Stay</h1>
+                            <p class="lead">Where Comfort Meets Timeless Elegance</p>
+                            <div class="mt-4">
+                                <a href="/rooms" class="btn btn-primary btn-lg me-3">Book Your Stay</a>
+                                <a href="/rooms" class="btn btn-outline-light btn-lg">Explore Rooms</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/2.jpg') }}') center/cover no-repeat; height:90vh;">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center text-center text-white">
+                        <div class="col-lg-8">
+                            <h1 class="display-4 fw-bold">Luxury Rooms</h1>
+                            <p class="lead">Relax in beautifully designed spaces</p>
+                            <a href="/rooms" class="btn btn-primary btn-lg">View Rooms</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/3.jpg') }}') center/cover no-repeat; height:90vh;">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center text-center text-white">
+                        <div class="col-lg-8">
+                            <h1 class="display-4 fw-bold">Perfect Getaway</h1>
+                            <p class="lead">Experience calm, comfort and nature</p>
+                            <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+</section>
+
 
     <!-- About Section -->
     <section id="about" class="py-5 bg-light">
