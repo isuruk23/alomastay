@@ -358,7 +358,15 @@
         <div class="container py-5">
             <h2 class="section-title">Gallery</h2>
             <p class="text-center mb-5">A visual journey through Aloma Stay's world of luxury</p>
-            
+            <!-- Gallery categories -->
+            <div class="text-center my-3">
+                <button class="btn btn-outline-primary me-2 filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="resort">Resort</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="rooms">Rooms</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="dining">Dining</button>
+                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="tours">Tours</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="attractions">Attractions</button>
+            </div>
             <div class="row">
                 <div class="col-md-3 mb-4 gallery-box rooms">
                     <div class="gallery-item">
@@ -372,6 +380,12 @@
                             class="img-fluid rounded" alt="Hotel Pool">
                     </div>
                 </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/11.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
                 <div class="col-md-3 mb-4 gallery-box rooms">
                     <div class="gallery-item">
                         <img src="{{ asset('public/images/gallery/room/3.jpg') }}"
@@ -383,6 +397,12 @@
                     <div class="gallery-item">
                         <img src="{{ asset('public/images/gallery/room/4.jpg') }}"
                             class="img-fluid rounded" alt="Luxury Suite">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/12.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
                     </div>
                 </div>
 
@@ -418,6 +438,12 @@
                             class="img-fluid rounded" alt="Resort">
                     </div>
                 </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/13.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
                  <div class="col-md-3 mb-4 gallery-box resort">
                     <div class="gallery-item">
                         <img src="{{ asset('public/images/gallery/resort/2.jpg') }}"
@@ -437,19 +463,48 @@
                     </div>
                 </div>
 
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/2.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/3.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/4.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/5.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/6.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 gallery-box attractions">
+                    <div class="gallery-item">
+                        <img src="{{ asset('public/images/gallery/attractions/7.jpg') }}"
+                            class="img-fluid rounded" alt="attractions">
+                    </div>
+                </div>
+
                 
 
             </div>
             
-            <!-- Gallery categories -->
-            <div class="text-center mt-3">
-                <button class="btn btn-outline-primary me-2 filter-btn active" data-filter="all">All</button>
-                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="resort">Resort</button>
-                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="rooms">Rooms</button>
-                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="dining">Dining</button>
-                <button class="btn btn-outline-primary me-2 filter-btn" data-filter="tours">Tours</button>
-                <button class="btn btn-outline-primary filter-btn" data-filter="attractions">Attractions</button>
-            </div>
+            
         </div>
     </section>
 
@@ -560,10 +615,9 @@
                     <div class="mb-4">
                         <h6 class="mb-3">Connect With Us</h6>
                         <div class="social-icons">
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="https://web.facebook.com/profile.php?id=61587243464985"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/alomastay"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.youtube.com/@alomastay"><i class="bi bi-youtube"></i></a>
                         </div>
                     </div>
                     

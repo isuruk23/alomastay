@@ -27,7 +27,7 @@
 </head>
 <body>
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/94771234567?text=Hello%20Aloma%20Stay%2C%20I%27d%20like%20to%20inquire%20about%20a%20booking" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/94778478588?text=Hello%20Aloma%20Stay%2C%20I%27d%20like%20to%20inquire%20about%20a%20booking" class="whatsapp-btn" target="_blank">
         <i class="bi bi-whatsapp"></i>
     </a>
 
@@ -63,7 +63,7 @@
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item ms-lg-2">
-                        <a class="btn btn-primary" href="#booking">Book Now</a>
+                        <a class="btn btn-primary" href="/rooms">Book Now</a>
                     </li>
                 </ul>
             </div>

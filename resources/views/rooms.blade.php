@@ -72,7 +72,7 @@
                             
                             <div class="room-buttons">
                                 <a href="/room-details/{{ $room->id }}" class="btn btn-outline-primary">View Details</a>
-                                <a href="#booking" class="btn btn-primary">Book Now</a>
+                                <!-- <a href="#booking" class="btn btn-primary">Book Now</a> -->
                             </div>
                         </div>
                     </div>

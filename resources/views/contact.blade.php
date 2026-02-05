@@ -148,22 +148,16 @@
                     <!-- 4️⃣ Map Section -->
                     <section class="mb-5" id="map-section">
                         <h2 class="mb-4 fw-bold aloma-text-primary">Our Location</h2>
-                        <p class="lead mb-4">Visit our stunning coastal retreat in Malibu, California. We're easily accessible from Los Angeles International Airport (LAX) and offer valet parking for all guests.</p>
+                        <!-- <p class="lead mb-4">Visit our stunning coastal retreat in Malibu, California. We're easily accessible from Los Angeles International Airport (LAX) and offer valet parking for all guests.</p> -->
                         
                         <div class="rounded-4 overflow-hidden shadow-sm aloma-shadow-hover">
                             <div class="aloma-map-container rounded-4">
                                 <!-- Google Maps Embed -->
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.935957991214!2d-118.68838208478477!3d34.025629080614764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e81da9f908d32d%3A0x6f4c8b3b3a6a7c7b!2sMalibu%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1623456789012!5m2!1sen!2s" 
-                                    style="border:0;" 
-                                    allowfullscreen="" 
-                                    loading="lazy" 
-                                    referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.940072755435!2d80.58604290966947!3d7.247661114296331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae36fd0f058990b%3A0xbca61141bc29ca6a!2sAloma%20stay%20Peradeniya!5e0!3m2!1sen!2slk!4v1770313369708!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                         
-                        <div class="row mt-4 g-3">
+                        <!-- <div class="row mt-4 g-3">
                             <div class="col-md-6">
                                 <div class="p-4 bg-light rounded-4">
                                     <h5 class="fw-bold aloma-text-primary mb-3">Getting Here</h5>
@@ -180,7 +174,7 @@
                                     <p class="mb-0"><i class="bi bi-shop me-2 aloma-icon"></i><strong>Shopping:</strong> Malibu Country Mart, Cross Creek</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
                 </div>
                 
@@ -201,10 +195,10 @@
                                         <div>
                                             <h5 class="card-title fw-bold mb-2 aloma-text-primary">Our Address</h5>
                                             <address class="mb-0">
-                                                <p class="mb-1">Aloma Stay Luxury Hotel</p>
-                                                <p class="mb-1">123 Coastal Drive</p>
-                                                <p class="mb-0">Malibu, CA 90265</p>
-                                                <p class="mb-0">United States</p>
+                                                <p class="mb-1">Aloma Stay</p>
+                                                <p class="mb-1">243/41/B Sangabogama,</p>
+                                                <p class="mb-0"> Kandy (20400),</p>
+                                                <p class="mb-0"> Sri Lanka.</p>
                                             </address>
                                         </div>
                                     </div>
@@ -220,9 +214,8 @@
                                         </div>
                                         <div>
                                             <h5 class="card-title fw-bold mb-2 aloma-text-primary">Phone Numbers</h5>
-                                            <p class="mb-1"><strong>Reservations:</strong> +1 (800) 555-ALOMA</p>
-                                            <p class="mb-1"><strong>Concierge:</strong> +1 (310) 555-0199</p>
-                                            <p class="mb-0"><strong>Emergency:</strong> +1 (310) 555-9111</p>
+                                            <p class="mb-1"><strong>Reservations:</strong>  +94 77 847 8588</p>
+                                        
                                         </div>
                                     </div>
                                 </div>
@@ -238,8 +231,7 @@
                                         <div>
                                             <h5 class="card-title fw-bold mb-2 aloma-text-primary">Email Addresses</h5>
                                             <p class="mb-1"><strong>Reservations:</strong> reservations@alomastay.com</p>
-                                            <p class="mb-1"><strong>Concierge:</strong> concierge@alomastay.com</p>
-                                            <p class="mb-1"><strong>Events:</strong> events@alomastay.com</p>
+                                    
                                             <p class="mb-0"><strong>General:</strong> info@alomastay.com</p>
                                         </div>
                                     </div>
@@ -276,7 +268,7 @@
                                 <div>
                                     <h5 class="card-title fw-bold mb-2 text-danger">Emergency Contact</h5>
                                     <p class="mb-2">For urgent assistance during your stay, please contact our 24/7 emergency line:</p>
-                                    <p class="fw-bold fs-4 mb-2 text-danger">+1 (310) 555-9111</p>
+                                    <p class="fw-bold fs-4 mb-2 text-danger"> +94 77 847 8588</p>
                                     <p class="text-muted small mb-0">Available for medical emergencies, security issues, and urgent guest needs.</p>
                                 </div>
                             </div>
