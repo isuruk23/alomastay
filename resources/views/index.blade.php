@@ -624,8 +624,7 @@
                     <!-- Map placeholder -->
                     <div class="mt-4">
                         <div class="ratio ratio-16x9">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.923090631344!2d80.70353367501214!3d8.012469491975036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afb0e08c4c5c4cb%3A0x4a2c3b0a3b3b3b3b!2sSigiriya%20Rock%20Fortress!5e0!3m2!1sen!2slk!4v1683795733134!5m2!1sen!2slk" 
-                                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.940072755435!2d80.58604290966947!3d7.247661114296331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae36fd0f058990b%3A0xbca61141bc29ca6a!2sAloma%20stay%20Peradeniya!5e0!3m2!1sen!2slk!4v1770313369708!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
