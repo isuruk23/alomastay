@@ -3,6 +3,7 @@
             --warm-champagne: #0b090a;
             --soft-beige: #F8F5F0;
             --light-gray: #F9F9F9;
+            --white:#fff;
         }
         
         * {
@@ -319,6 +320,7 @@
             display: inline-block;
             width: 40px;
             height: 40px;
+            color: white;
             background-color: #333;
             border-radius: 50%;
             text-align: center;
@@ -432,7 +434,7 @@
 
          /* Page Hero */
         .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('room.jpg') no-repeat center center;
             background-size: cover;
             height: 60vh;
             display: flex;
@@ -625,7 +627,7 @@
         
         /* Guest Promise */
         .guest-promise {
-            background: linear-gradient(rgba(155, 121, 72, 0.05), rgba(155, 121, 72, 0.05)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background: linear-gradient(rgba(155, 121, 72, 0.05), rgba(155, 121, 72, 0.05)), url('hero.jpg') no-repeat center center;
             background-size: cover;
             padding: 100px 0;
             text-align: center;
@@ -656,6 +658,13 @@
             color: var(--gold-bronze);
             border-left: 4px solid var(--warm-champagne);
             padding-left: 2rem;
+        }
+
+        #dining .nav-pills .nav-link.active {
+            color: var(--white) !important;
+            background-color: var(--warm-champagne);
+            border: 2px solid var(--gold-bronze);
+
         }
 
         /* Rooms Section */
@@ -797,7 +806,7 @@
         
         /* Booking CTA */
         .booking-cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('booking.jpg') no-repeat center center;
             background-size: cover;
             padding: 100px 0;
             text-align: center;
@@ -1130,7 +1139,7 @@
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
-            background: linear-gradient(rgba(155, 121, 72, 0.9), rgba(155, 121, 72, 0.9)), url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80') no-repeat center center;
+            background: linear-gradient(rgba(229, 226, 221, 0.9), rgba(149, 147, 144, 0.9)), url('stay.jpg') no-repeat center center;
             background-size: cover;
             text-align: center;
             color: white;
@@ -1169,7 +1178,7 @@
 
         /* CTA Section */
         .package-cta-section {
-            background: linear-gradient(rgba(155, 121, 72, 0.9), rgba(155, 121, 72, 0.9)), url('https://images.unsplash.com/photo-1552465011-b4e30bf7349d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') no-repeat center center;
+            background: linear-gradient(rgba(229, 226, 221, 0.9), rgba(149, 147, 144, 0.9)), url('stay.jpg') no-repeat center center;
             background-size: cover;
             padding: 100px 0;
             text-align: center;
@@ -1648,52 +1657,52 @@
         
         /* Custom scoped classes only */
         .aloma-package-details .aloma-text-primary {
-            color: #9B7948 !important;
+            color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-text-secondary {
-            color: #DBA552 !important;
+            color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-bg-primary {
-            background-color: #9B7948 !important;
+            background-color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-bg-secondary {
-            background-color: #DBA552 !important;
+            background-color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-border-primary {
-            border-color: #9B7948 !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-border-secondary {
-            border-color: #DBA552 !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-btn-primary {
-            background-color: #9B7948 !important;
-            border-color: #9B7948 !important;
+            background-color: #0b090a !important;
+            border-color: #0b090a !important;
             color: white !important;
         }
         
         .aloma-package-details .aloma-btn-primary:hover {
-            background-color: #8a6a3f !important;
-            border-color: #8a6a3f !important;
+            background-color: #0b090a !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-btn-outline-primary {
-            color: #9B7948 !important;
-            border-color: #9B7948 !important;
+            color: #0b090a !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-package-details .aloma-btn-outline-primary:hover {
-            background-color: #9B7948 !important;
+            background-color: #0b090a !important;
             color: white !important;
         }
         
         .aloma-package-details .aloma-icon {
-            color: #9B7948;
+            color: #0b090a;
         }
 
         .aloma-package-details .card{
@@ -1717,7 +1726,7 @@
         }
         
         .aloma-package-details .aloma-carousel-indicators button.active {
-            background-color: #9B7948;
+            background-color: #0b090a;
         }
         
         .aloma-package-details .aloma-price {
@@ -1739,7 +1748,7 @@
         }
         
         .aloma-package-details .aloma-accordion-button:not(.collapsed) {
-            color: #9B7948;
+            color: #0b090a;
             background-color: rgba(155, 121, 72, 0.05);
         }
         
@@ -1748,7 +1757,7 @@
         }
         
         .aloma-package-details .aloma-breadcrumb-item.active {
-            color: #9B7948;
+            color: #0b090a;
         }
         
         /* Mobile specific */
@@ -1769,52 +1778,52 @@
         
         /* Custom scoped classes only */
         .aloma-contact-page .aloma-text-primary {
-            color: #9B7948 !important;
+            color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-text-secondary {
-            color: #DBA552 !important;
+            color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-bg-primary {
-            background-color: #9B7948 !important;
+            background-color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-bg-secondary {
-            background-color: #DBA552 !important;
+            background-color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-border-primary {
-            border-color: #9B7948 !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-border-secondary {
-            border-color: #DBA552 !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-btn-primary {
-            background-color: #9B7948 !important;
-            border-color: #9B7948 !important;
+            background-color: #0b090a !important;
+            border-color: #0b090a !important;
             color: white !important;
         }
         
         .aloma-contact-page .aloma-btn-primary:hover {
-            background-color: #8a6a3f !important;
-            border-color: #8a6a3f !important;
+            background-color: #0b090a !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-btn-outline-primary {
-            color: #9B7948 !important;
-            border-color: #9B7948 !important;
+            color: #0b090a !important;
+            border-color: #0b090a !important;
         }
         
         .aloma-contact-page .aloma-btn-outline-primary:hover {
-            background-color: #9B7948 !important;
+            background-color: #0b090a !important;
             color: white !important;
         }
         
         .aloma-contact-page .aloma-icon {
-            color: #9B7948;
+            color: #0b090a;
         }
         
         .aloma-contact-page .aloma-icon-bg {
@@ -1824,7 +1833,7 @@
         }
         
         .aloma-contact-page .aloma-form-control:focus {
-            border-color: #9B7948;
+            border-color: #0b090a;
             box-shadow: 0 0 0 0.25rem rgba(155, 121, 72, 0.25);
         }
         
@@ -1841,11 +1850,11 @@
         }
         
         .aloma-contact-page .aloma-contact-card {
-            border-top: 4px solid #9B7948;
+            border-top: 4px solid #0b090a;
         }
         
         .aloma-contact-page .aloma-breadcrumb-item.active {
-            color: #9B7948;
+            color: #0b090a;
         }
         
         .aloma-contact-page .aloma-map-container {

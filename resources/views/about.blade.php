@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0 fade-in">
-                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                    <img src="{{ asset('public/images/alomastay-front.jpg') }}" 
                          alt="Aloma Stay Hotel Lobby" class="img-fluid story-img">
                 </div>
                 <div class="col-lg-6 fade-in">
@@ -98,7 +98,7 @@
                 </div>
                 
                 <div class="col-lg-6 fade-in">
-                    <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" 
+                    <img src="{{ asset('public/images/kandy.jpg') }}" 
                          alt="Aloma Stay Pool and Gardens" class="img-fluid highlight-img">
                 </div>
             </div>
