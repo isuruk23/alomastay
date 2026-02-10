@@ -637,11 +637,8 @@
 @section('script')
 <script>
 $(document).ready(function () {
-
     $('.filter-btn').click(function () {
-
         let filter = $(this).data('filter');
-
         // active button style
         $('.filter-btn').removeClass('active');
         $(this).addClass('active');
