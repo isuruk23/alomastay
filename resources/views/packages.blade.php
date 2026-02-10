@@ -135,7 +135,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <div class="featured-image">
-                            <img src="https://images.unsplash.com/photo-1523480717984-24cba35ae1eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                            <img src="{{ asset('public/images/ultimate-experience.jpg') }}" 
                                  alt="Ultimate Sri Lankan Experience" loading="lazy">
                         </div>
                     </div>
