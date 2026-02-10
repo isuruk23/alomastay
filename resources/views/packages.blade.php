@@ -114,7 +114,7 @@
                             
                             <div class="package-buttons">
                                 <a href="/package-details/{{ $tour->id }}" class="btn btn-outline-primary">View Details</a>
-                                <a href="booking.html?package={{ $tour->name }}" class="btn btn-primary">Book Now</a>
+                                <!-- <a href="booking.html?package={{ $tour->name }}" class="btn btn-primary">Book Now</a> -->
                             </div>
                         </div>
                     </div>
