@@ -885,7 +885,7 @@ $(document).ready(function () {
                 spaceBetween: 20,
                 loop: true,
                 autoplay: {
-                    delay: 4fff,
+                    delay: 4000,
                     disableOnInteraction: false,
                 },
                 pagination: {
@@ -915,7 +915,7 @@ $(document).ready(function () {
                 spaceBetween: 20,
                 loop: true,
                 autoplay: {
-                    delay: 5fff,
+                    delay: 5000,
                     disableOnInteraction: false,
                 },
                 pagination: {
