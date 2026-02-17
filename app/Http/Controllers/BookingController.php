@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\VehicleBooking;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -93,6 +94,77 @@ public function bookroom(Request $request)
     return response()->json([
         'status' => 'success',
         'message' => 'Booking submitted successfully!'
+    ], 200);
+}
+
+
+public function bookvehicle(Request $request)
+{
+    $request->validate([
+        'name' => 'required',
+        'phone' => 'required',
+        'pickup_location' => 'required',
+        'destination' => 'required',
+        'check_in' => 'required|date',
+        'passengers' => 'required',
+        'message' => 'required',
+    ]);
+
+
+    
+    $name = $request->name;
+    $phone = $request->phone;
+    $pickup_location = $request->pickup_location;
+    $destination = $request->destination;
+    $check_in = $request->check_in;
+    $check_out = $request->check_out;
+    $vehicle_id = $request->vehicle_id;
+    $passengers = $request->passengers;
+    $massage = $request->message;
+
+    // Convert to 2:00 PM datetime
+    $check_in = Carbon::parse($check_in);
+    $return_time = Carbon::parse($check_out); // assuming 24 hours rental, adjust as needed
+  
+
+    // Check availability
+    $overlap = VehicleBooking::where('vehicle_id', $vehicle_id)
+        ->where(function ($q) use ($check_in, $return_time) {
+            $q->where('check_in', '<', $return_time)
+            ->where('return_time', '>', $check_in);
+        })
+        ->exists();
+
+    if ($overlap) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Selected vehicle is not available for this time period!'
+        ], 422);
+    }
+
+    // Save booking
+    
+   $booking = VehicleBooking::create([
+        'name' => $request->name,
+        'phone' => $request->phone,
+        'pickup_location' => $request->pickup_location,
+        'destination' => $request->destination,
+        'check_in' => $request->check_in,
+        'return_time' => $request->check_out,
+        'vehicle_id' => 1, // hardcoded for now, adjust as needed
+        'passengers' => $request->passengers,
+        'message' => $request->message,
+    ]);
+
+    // Send Email
+    // Mail::raw("Hi {$booking->name}, your booking is received.", function ($message) use ($booking) {
+    //     $message->to($booking->email)
+    //             ->subject('Booking Confirmation');
+    // });
+
+    return response()->json([
+        'status' => 'success',
+        'message' => 'Vehicle booking submitted successfully!'
     ], 200);
 }
 

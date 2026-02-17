@@ -507,6 +507,184 @@
             
         </div>
     </section>
+    <section class="aloma-vehicle-hire container my-5 px-3 px-md-4">
+    <!-- 1️⃣ Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-semibold" style="color: #212529;">Hire a Vehicle for Your Journey</h2>
+      <p class="text-secondary-emphasis mt-2">Comfortable and reliable transport for tours, airport transfers, and private travel.</p>
+      <div class="aloma-divider"></div> <!-- decorative divider 0b090a -->
+    </div>
+
+    <!-- 2️⃣ Featured vehicle layout (two-column) -->
+    <div class="row g-4 align-items-stretch">
+      <!-- Left column – image gallery (carousel + thumbnails) -->
+      <div class="col-md-7">
+        <div class="aloma-gallery-container">
+          <!-- Bootstrap carousel without extra libs, with rounded & shadow -->
+          <div id="alomaVehicleCarousel" class="carousel slide rounded-4 shadow" data-bs-ride="carousel">
+            <div class="carousel-inner rounded-4">
+              <!-- We'll use placeholder images from bootstrap Icons? but better unsplash placeholders (free) — use inline images via https://picsum or similar -->
+              <div class="carousel-item active">
+                <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
+                  <img src="https://picsum.photos/id/100/800/500" class="d-block w-100 h-100" alt="Exterior view" style="object-fit: cover;">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
+                  <img src="https://picsum.photos/id/101/800/500" class="d-block w-100 h-100" alt="Interior seating" style="object-fit: cover;">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
+                  <img src="https://picsum.photos/id/102/800/500" class="d-block w-100 h-100" alt="Side view" style="object-fit: cover;">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
+                  <img src="https://picsum.photos/id/103/800/500" class="d-block w-100 h-100" alt="Luggage space" style="object-fit: cover;">
+                </div>
+              </div>
+            </div>
+            <!-- controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#alomaVehicleCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#alomaVehicleCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- thumbnail gallery below (indicators alternative) -->
+          <div class="row g-2 mt-2">
+            <div class="col-3">
+              <img src="https://picsum.photos/id/100/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="0" alt="thumb exterior">
+            </div>
+            <div class="col-3">
+              <img src="https://picsum.photos/id/101/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="1" alt="thumb interior">
+            </div>
+            <div class="col-3">
+              <img src="https://picsum.photos/id/102/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="2" alt="thumb side">
+            </div>
+            <div class="col-3">
+              <img src="https://picsum.photos/id/103/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="3" alt="thumb luggage">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column – vehicle details + compact quick form inside same card -->
+      <div class="col-md-5">
+        <div class="card shadow-sm rounded-4 h-100 aloma-hover-shadow border-0">
+          <div class="card-body p-4 d-flex flex-column">
+            <h4 class="fw-semibold">Private Tour Vehicle with Driver</h4>
+            <ul class="list-unstyled mt-2">
+              <li class="mb-2"><i class="bi bi-people-fill me-2" style="color: #0b090a;"></i> Passenger Capacity: Up to 6 guests</li>
+              <li class="mb-2"><i class="bi bi-wind me-2" style="color: #0b090a;"></i> Air Conditioning</li>
+              <li class="mb-2"><i class="bi bi-cup-straw me-2" style="color: #0b090a;"></i> Comfortable Seating</li>
+              <li class="mb-2"><i class="bi bi-translate me-2" style="color: #0b090a;"></i> Professional English-speaking Driver</li>
+              <li class="mb-2"><i class="bi bi-suitcase-lg me-2" style="color: #0b090a;"></i> Ideal for Tours & Airport Transfers</li>
+            </ul>
+            <p class="fst-italic text-secondary">Rates available upon request</p>
+            <!-- two CTA buttons -->
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <button class="btn" style="background-color: #0b090a; border: none; color: #fff; font-weight: 500; padding: 0.5rem 1.5rem; border-radius: 30px;">Send Inquiry</button>
+              <button class="btn aloma-btn-outline-primary" style="border-radius: 30px; padding: 0.5rem 1.5rem;"><i class="bi bi-whatsapp me-1"></i> WhatsApp</button>
+            </div>
+
+            <!-- 3️⃣ Quick Inquiry Form (inside same card) -->
+            <hr class="my-2">
+            <h5 class="mt-2 fs-6 fw-semibold"><i class="bi bi-pencil-square me-1" style="color: #0b090a;"></i> Quick availability check</h5>
+            <div id="bookingAlert" class="alert d-none" role="alert"></div>
+            <form class="row g-2 mt-2" id="vehicleBookingForm">
+              <div class="col-6">
+                <input type="text" id="name" name="name" class="form-control form-control-sm" placeholder="Name" aria-label="Name">
+              </div>
+              <div class="col-6">
+                <input type="tel" id="phone" name="phone" class="form-control form-control-sm" placeholder="Phone / WhatsApp">
+              </div>
+              <div class="col-6">
+                <input type="text" id="pickup_location" name="pickup_location" class="form-control form-control-sm" placeholder="Pickup location">
+              </div>
+              <div class="col-6">
+                <input type="text" id="destination" name="destination" class="form-control form-control-sm" placeholder="Destination">
+              </div>
+              <div class="col-6">
+                <input type="date" id="check_in" name="check_in" class="form-control form-control-sm">
+              </div>
+              <div class="col-6">
+                <input type="date" id="check_out" name="check_out" class="form-control form-control-sm">
+              </div>
+              <div class="col-6">
+                <select id="passengers" name="passengers" class="form-select form-select-sm">
+                  <option selected>Passengers</option>
+                  <option value="1-2">1-2</option>
+                  <option value="3-4">3-4</option>
+                  <option value="5-6">5-6</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <textarea id="message" name="message" class="form-control form-control-sm" rows="2" placeholder="Message (optional)"></textarea>
+              </div>
+              <div class="col-12">
+                <button type="button" id="bookVehicleBtn" class="btn w-100" style="background-color: #0b090a; color: #fff; border-radius: 30px; font-weight: 500;">Check Availability</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4️⃣ Why Choose Our Vehicle (icon-based horizontal) -->
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-3 text-center mt-5 pt-2">
+      <div class="col">
+        <div class="p-2">
+          <i class="bi bi-person-badge fs-1 aloma-icon-primary" style="color: #0b090a;"></i>
+          <p class="mt-1 fw-medium">Experienced Driver</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-2">
+          <i class="bi bi-emoji-smile fs-1 aloma-icon-primary" style="color: #0b090a;"></i>
+          <p class="mt-1 fw-medium">Comfortable Travel</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-2">
+          <i class="bi bi-map fs-1 aloma-icon-primary" style="color: #0b090a;"></i>
+          <p class="mt-1 fw-medium">Flexible Tour Plans</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-2">
+          <i class="bi bi-airplane fs-1 aloma-icon-primary" style="color: #0b090a;"></i>
+          <p class="mt-1 fw-medium">Airport Pickup</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-2">
+          <i class="bi bi-shield-check fs-1 aloma-icon-primary" style="color: #0b090a;"></i>
+          <p class="mt-1 fw-medium">Safe & Reliable</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5️⃣ Call-to-Action Banner -->
+    <div class="bg-white p-5 rounded-5 shadow-sm text-center mt-5" style="background: #fefbf7;">
+      <h4 class="fw-semibold">Make your journey around Sri Lanka comfortable and stress-free with our private vehicle service.</h4>
+      <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+        <button class="btn px-4 py-2" style="background-color: #0b090a; color: #fff; border-radius: 40px; font-weight: 500;">Hire This Vehicle</button>
+        <button class="btn px-4 py-2 aloma-btn-outline-primary" style="border-radius: 40px;">View Tour Packages</button>
+      </div>
+    </div>
+
+    <!-- optional sticky CTA on mobile (safe extra) -->
+    <div class="d-block d-md-none mt-3 aloma-sticky-mobile text-center">
+      <div class="bg-white p-2 shadow rounded-pill d-inline-block border">
+        <span class="mx-2"><i class="bi bi-whatsapp" style="color:#25D366;"></i> <strong>+94 77 123 4567</strong></span>
+      </div>
+    </div>
+  </section>
 
     <!-- Special Offers -->
     <section class="py-5 bg-light">
@@ -652,6 +830,49 @@ $(document).ready(function () {
 
     });
 
+
+    $('#bookVehicleBtn').on('click', function () {
+
+        let formData = new FormData($('#vehicleBookingForm')[0]);
+        let alertBox = $('#bookingAlert');
+
+        $.ajax({
+            url: "{{ route('book.vehicle') }}",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            success: function (res) {
+
+                alertBox.removeClass('d-none alert-danger alert-success');
+
+                if (res.status) {
+                    alertBox.addClass('alert-success').text(res.message);
+                    $('#roomBookingForm')[0].reset();
+                } else {
+                    alertBox.addClass('alert-danger').text(res.message);
+                }
+            },
+            error: function (xhr) {
+
+            let msg = 'Something went wrong. Please try again.';
+
+            if (xhr.responseJSON && xhr.responseJSON.message) {
+                msg = xhr.responseJSON.message; // <-- your custom message
+            }
+
+            alertBox
+                .removeClass('d-none alert-success')
+                .addClass('alert-danger')
+                .text(msg);
+        }
+        });
+
+    });
+
 });
 </script>
 
@@ -664,7 +885,7 @@ $(document).ready(function () {
                 spaceBetween: 20,
                 loop: true,
                 autoplay: {
-                    delay: 4000,
+                    delay: 4fff,
                     disableOnInteraction: false,
                 },
                 pagination: {
@@ -694,7 +915,7 @@ $(document).ready(function () {
                 spaceBetween: 20,
                 loop: true,
                 autoplay: {
-                    delay: 5000,
+                    delay: 5fff,
                     disableOnInteraction: false,
                 },
                 pagination: {

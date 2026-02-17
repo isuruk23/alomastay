@@ -52,6 +52,16 @@
         </div>
         <div class="col-md-3">
             <div class="card">
+                <div class="card-header">Transport Booking</div>
+
+                <div class="card-body">
+                  <p>{{ $bookings_count }}</p>
+                </div>
+                <div class="card-footer"><a href="{{ route('admin.transport.index') }}">view</a></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
                 <div class="card-header">Things to do</div>
 
                 <div class="card-body">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\VehicleBookingController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\MultiDayTourController;
 use App\Http\Controllers\MultiDayTourDetailsController;
@@ -21,6 +22,7 @@ Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->nam
 Route::get('/room-details/{id}', [App\Http\Controllers\PageController::class, 'roomdetails'])->name('room-details');
 Route::get('/rooms', [App\Http\Controllers\PageController::class, 'rooms'])->name('rooms');
 Route::post('/room/book', [BookingController::class, 'bookroom'])->name('room.book');
+Route::post('/vehicle/book', [BookingController::class, 'bookvehicle'])->name('book.vehicle');
 
 Route::get('/packages', [App\Http\Controllers\PageController::class, 'packages'])->name('packages');
 Route::get('/package-details/{id}', [App\Http\Controllers\PageController::class, 'packagedetails'])->name('package-details');
@@ -51,6 +53,7 @@ Route::prefix('admin')
     Route::resource('multiday_tours_details', MultiDayTourDetailsController::class);
     Route::resource('thingstodo', ThingstodoController::class);
     Route::resource('booking', BookingController::class);
+    Route::resource('transport', VehicleBookingController::class);
     Route::resource('rooms', RoomController::class);
     Route::delete('/room-image/{id}', [RoomController::class, 'deleteImage'])
             ->name('room.image.delete');
