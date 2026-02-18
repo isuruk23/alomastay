@@ -107,6 +107,7 @@ public function bookvehicle(Request $request)
         'destination' => 'required',
         'check_in' => 'required|date',
         'passengers' => 'required',
+        'vehicle_id' => 'required',
         'message' => 'required',
     ]);
 
@@ -151,7 +152,7 @@ public function bookvehicle(Request $request)
         'destination' => $request->destination,
         'check_in' => $request->check_in,
         'return_time' => $request->check_out,
-        'vehicle_id' => 1, // hardcoded for now, adjust as needed
+        'vehicle_id' => $request->vehicle_id,
         'passengers' => $request->passengers,
         'message' => $request->message,
     ]);

@@ -7,6 +7,7 @@ use App\Models\Room;
 use App\Models\MultiDayTour;
 use App\Models\MultiDayTourDetails;
 use App\Models\Thingstodo;
+use App\Models\Vehicle;
 
 class PageController extends Controller
 {
@@ -14,9 +15,10 @@ class PageController extends Controller
     {
         $mtours = MultiDayTour::all();
         $thingstodos = Thingstodo::all();
+        $vehicles = Vehicle::all();
         $rooms = Room::latest()->take(3)->get();
    
-        return view('index', compact('mtours','thingstodos','rooms'));
+        return view('index', compact('mtours','thingstodos','vehicles','rooms'));
     }
     public function about()
     {

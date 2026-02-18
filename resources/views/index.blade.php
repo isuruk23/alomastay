@@ -524,24 +524,20 @@
           <div id="alomaVehicleCarousel" class="carousel slide rounded-4 shadow" data-bs-ride="carousel">
             <div class="carousel-inner rounded-4">
               <!-- We'll use placeholder images from bootstrap Icons? but better unsplash placeholders (free) — use inline images via https://picsum or similar -->
+              
               <div class="carousel-item active">
                 <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
-                  <img src="https://picsum.photos/id/100/800/500" class="d-block w-100 h-100" alt="Exterior view" style="object-fit: cover;">
+                  <img src="{{ asset('public/vehicles/byd.png') }}" class="d-block w-100 h-100" alt="Interior seating" style="object-fit: cover;">
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
-                  <img src="https://picsum.photos/id/101/800/500" class="d-block w-100 h-100" alt="Interior seating" style="object-fit: cover;">
+                  <img src="{{ asset('public/vehicles/prius.png') }}" class="d-block w-100 h-100" alt="Side view" style="object-fit: cover;">
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
-                  <img src="https://picsum.photos/id/102/800/500" class="d-block w-100 h-100" alt="Side view" style="object-fit: cover;">
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="aloma-gallery-img" style="height: 300px; background: #ddd;">
-                  <img src="https://picsum.photos/id/103/800/500" class="d-block w-100 h-100" alt="Luggage space" style="object-fit: cover;">
+                  <img src="{{ asset('public/vehicles/nissan-sunny.png') }}" class="d-block w-100 h-100" alt="Luggage space" style="object-fit: cover;">
                 </div>
               </div>
             </div>
@@ -558,17 +554,15 @@
           <!-- thumbnail gallery below (indicators alternative) -->
           <div class="row g-2 mt-2">
             <div class="col-3">
-              <img src="https://picsum.photos/id/100/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="0" alt="thumb exterior">
+              <img src="{{ asset('public/vehicles/byd.png') }}" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="0" alt="thumb exterior">
             </div>
             <div class="col-3">
-              <img src="https://picsum.photos/id/101/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="1" alt="thumb interior">
+              <img src="{{ asset('public/vehicles/prius.png') }}" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="1" alt="thumb interior">
             </div>
             <div class="col-3">
-              <img src="https://picsum.photos/id/102/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="2" alt="thumb side">
+              <img src="{{ asset('public/vehicles/nissan-sunny.png') }}" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="2" alt="thumb side">
             </div>
-            <div class="col-3">
-              <img src="https://picsum.photos/id/103/200/120" class="rounded-3 w-100 border" style="cursor: pointer; object-fit: cover; height: 70px;" data-bs-target="#alomaVehicleCarousel" data-bs-slide-to="3" alt="thumb luggage">
-            </div>
+           
           </div>
         </div>
       </div>
@@ -595,7 +589,7 @@
             <!-- 3️⃣ Quick Inquiry Form (inside same card) -->
             <hr class="my-2">
             <h5 class="mt-2 fs-6 fw-semibold"><i class="bi bi-pencil-square me-1" style="color: #0b090a;"></i> Quick availability check</h5>
-            <div id="bookingAlert" class="alert d-none" role="alert"></div>
+            <div id="VehiclebookingAlert" class="alert d-none" role="alert"></div>
             <form class="row g-2 mt-2" id="vehicleBookingForm">
               <div class="col-6">
                 <input type="text" id="name" name="name" class="form-control form-control-sm" placeholder="Name" aria-label="Name">
@@ -621,6 +615,14 @@
                   <option value="1-2">1-2</option>
                   <option value="3-4">3-4</option>
                   <option value="5-6">5-6</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <select id="vehicle_id" name="vehicle_id" class="form-select form-select-sm">
+                  <option selected>Select Vehicle</option>
+                    @foreach($vehicles as $vehicle)
+                        <option value="{{ $vehicle->id }}">{{ $vehicle->name }}</option>
+                    @endforeach
                 </select>
               </div>
               <div class="col-12">
@@ -687,7 +689,7 @@
   </section>
 
     <!-- Special Offers -->
-    <section class="py-5 bg-light">
+    <!-- <section class="py-5 bg-light">
         <div class="container py-5">
             <h2 class="section-title">Special Offers & Packages</h2>
             <div class="row mt-5">
@@ -723,7 +725,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact & Booking -->
     <section id="contact" class="py-5">
@@ -732,25 +734,26 @@
             <div class="row mt-5">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <h4 class="mb-4">Booking Inquiry</h4>
-                    <form id="bookingForm">
+                    <div id="bookingAlert" class="alert d-none" role="alert"></div>
+                    <form id="roomBookingForm">
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone">
+                                <input type="tel" class="form-control" id="phone" name="phone">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="guests" class="form-label">Number of Guests</label>
-                                <select class="form-select" id="guests">
+                                <select class="form-select" id="guests" name="guests">
                                     <option value="1">1 Guest</option>
                                     <option value="2" selected>2 Guests</option>
                                     <option value="3">3 Guests</option>
@@ -760,20 +763,29 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label for="checkin" class="form-label">Check-in Date</label>
-                                <input type="date" class="form-control" id="checkin" required>
+                                <input type="date" class="form-control" id="check_in" name="check_in" required>
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label for="checkout" class="form-label">Check-out Date</label>
-                                <input type="date" class="form-control" id="checkout" required>
+                                <input type="date" class="form-control" id="check_out" name="check_out" required>
+                            </div>
+                             <div class="col-md-4 mb-3">
+                                <label for="room" class="form-label fw-semibold">Room</label>
+                                <select class="form-select form-control" id="room_no" name="room_no">
+                                    @foreach($rooms as $room)                                           
+                                    <option value="{{ $room->id }}">{{ $room->name }}</option>
+                                    @endforeach
+                                
+                                </select>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Special Requests</label>
-                            <textarea class="form-control" id="message" rows="4"></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                        <button type="button" id="bookRoomBtn" class="btn btn-primary">Submit Inquiry</button>
                     </form>
                 </div>
                 <div class="col-lg-4">
@@ -830,11 +842,53 @@ $(document).ready(function () {
 
     });
 
+    $('#bookRoomBtn').on('click', function () {
+
+            let formData = new FormData($('#roomBookingForm')[0]);
+            let alertBox = $('#bookingAlert');
+
+            $.ajax({
+                url: "{{ route('room.book') }}",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                success: function (res) {
+
+                    alertBox.removeClass('d-none alert-danger alert-success');
+
+                    if (res.status) {
+                        alertBox.addClass('alert-success').text(res.message);
+                        $('#roomBookingForm')[0].reset();
+                    } else {
+                        alertBox.addClass('alert-danger').text(res.message);
+                    }
+                },
+                error: function (xhr) {
+
+                let msg = 'Something went wrong. Please try again.';
+
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    msg = xhr.responseJSON.message; // <-- your custom message
+                }
+
+                alertBox
+                    .removeClass('d-none alert-success')
+                    .addClass('alert-danger')
+                    .text(msg);
+            }
+            });
+
+        });
+
 
     $('#bookVehicleBtn').on('click', function () {
 
         let formData = new FormData($('#vehicleBookingForm')[0]);
-        let alertBox = $('#bookingAlert');
+        let alertBox = $('#VehiclebookingAlert');
 
         $.ajax({
             url: "{{ route('book.vehicle') }}",
@@ -992,6 +1046,8 @@ $(document).ready(function () {
             document.getElementById('checkin').addEventListener('change', function() {
                 document.getElementById('checkout').min = this.value;
             });
+
+            
         });
     </script>
     @endsection
