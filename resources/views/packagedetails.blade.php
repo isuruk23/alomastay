@@ -201,15 +201,7 @@
                                         <label for="check_out" class="form-label">Check-out Date</label>
                                         <input type="date" class="form-control" id="check_out" name="check_out">
                                     </div>
-                                    <div class="mb-4">
-                                        <label for="room" class="form-label fw-semibold">Room</label>
-                                        <select class="form-select py-3 rounded-3" id="room_no" name="room_no">
-                                            @foreach($rooms as $room)                                           
-                                            <option value="{{ $room->id }}">{{ $room->name }}</option>
-                                            @endforeach
-                                     
-                                        </select>
-                                    </div>
+                                   
                                     
                                     <div class="mb-3">
                                         <label for="guests" class="form-label">Guests</label>
@@ -221,8 +213,8 @@
                                         </select>
                                     </div>
                                     
-                                    
-                                    <button type="button" id="bookRoomBtn"  class="btn btn-primary">Book This Room</button>
+                                    <input type="hidden" name="tour_id" value="{{ $tour->id }}">
+                                    <button type="button" id="bookTourBtn"  class="btn btn-primary">Book This Room</button>
                                 </form>
                                 <div class="d-grid mt-3">
                                     <button type="button" class="btn aloma-btn-outline-primary py-3 rounded-3 fw-bold">Inquire About Package</button>
@@ -391,13 +383,13 @@
     <script>
 $(document).ready(function () {
 
-    $('#bookRoomBtn').on('click', function () {
+    $('#bookTourBtn').on('click', function () {
 
         let formData = new FormData($('#roomBookingForm')[0]);
         let alertBox = $('#bookingAlert');
 
         $.ajax({
-            url: "{{ route('room.book') }}",
+            url: "{{ route('book.tour') }}",
             type: "POST",
             data: formData,
             processData: false,

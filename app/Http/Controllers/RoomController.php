@@ -162,17 +162,19 @@ class RoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy($id)
-    // {
-    //     $room = Room::findOrFail($id);
+    public function destroy($id)
+    {
+       
+        $room = Room::findOrFail($id);
 
-    //     $room->delete();
+        $room->delete();
 
-    //     return redirect()->back()->with('success', 'Room deleted successfully');
-    // }
+        return redirect()->back()->with('success', 'Room deleted successfully');
+    }
 
     public function deleteImage($id)
     {
+
         $img = RoomImage::findOrFail($id);
 
         Storage::disk('public')->delete($img->image);

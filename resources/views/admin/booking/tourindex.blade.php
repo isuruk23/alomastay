@@ -13,7 +13,7 @@
     <div class="card mb-4">
         <div class="card-header" id="form-title">Add Booking</div>
         <div class="card-body">
-            <form action="{{ route('admin.booking.store') }}" method="POST" id="booking-form">
+            <form action="{{ route('admin.tourbooking.store') }}" method="POST" id="booking-form">
                 @csrf
                 <input type="hidden" name="booking_id" id="booking_id">
                 
@@ -29,11 +29,10 @@
                     </div>
                     <div class="col-md-2 mb-3">
                       
-                         <select name="room_no" id="room_no" class="form-control" required>
-                            <option value="">Select Room</option>
-                            @foreach($rooms as $room)
-                            <option value="{{$room->id}}">{{$room->name}}
-                            </option>
+                         <select name="tour_id" id="tour_id" class="form-control" required>
+                            <option value="">Select Tour</option>
+                            @foreach($tours as $tour)
+                            <option value="{{$tour->id}}">{{$tour->name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -80,7 +79,7 @@
                 <td>{{ $b->name }}</td>
                 <td>{{ $b->email }}</td>
                 <td>{{ $b->phone }}</td>
-                <td>{{ $b->room_no }}</td>
+                <td>{{ $b->multiDayTour->name }}</td>
                 <td>{{ $b->check_in }}</td>
                 <td>{{ $b->check_out }}</td>
                 <td>
@@ -95,25 +94,25 @@
                         data-name="{{ $b->name }}"
                         data-email="{{ $b->email }}"
                         data-phone="{{ $b->phone }}"
-                        data-room_no="{{ $b->room_no }}"
+                        data-tour_id="{{ $b->tour_id }}"
                         data-check_in="{{ $b->check_in }}"
                         data-check_out="{{ $b->check_out }}"
                         data-status="{{ $b->status }}">Edit</button>
 
                    
 
-                         <form action="{{ route('admin.booking.destroy', $b->id) }}" 
-                                method="POST" 
-                                style="display:inline-block;"
-                                onsubmit="return confirm('Are you sure you want to delete this booking?');">
+                        <form action="{{ route('admin.tourbooking.destroy', $b->id) }}" 
+                            method="POST" 
+                            style="display:inline-block;"
+                            onsubmit="return confirm('Are you sure you want to delete this booking?');">
 
-                                @csrf
-                                @method('DELETE')
+                            @csrf
+                            @method('DELETE')
 
-                                <button type="submit" class="btn btn-sm btn-danger">
-                                    Delete
-                                </button>
-                            </form>
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </form>
                 </td>
             </tr>
             @endforeach
@@ -132,7 +131,7 @@ const bookingId = document.getElementById('booking_id');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
-const room_no = document.getElementById('room_no');
+const tour_id = document.getElementById('tour_id');
 const check_in = document.getElementById('check_in');
 const check_out = document.getElementById('check_out');
 const status = document.getElementById('status');
@@ -143,7 +142,7 @@ editButtons.forEach(btn => {
         name.value = btn.dataset.name;
         email.value = btn.dataset.email;
         phone.value = btn.dataset.phone;
-        room_no.value = btn.dataset.room_no;
+        tour_id.value = btn.dataset.tour_id;
         check_in.value = formatDate(btn.dataset.check_in);
         check_out.value = formatDate(btn.dataset.check_out);
         status.value = btn.dataset.status;
@@ -169,7 +168,7 @@ cancelBtn.addEventListener('click', () => {
     name.value = '';
     email.value = '';
     phone.value = '';
-    room_no.value = '';
+    tour_id.value = '';
     check_in.value = '';
     check_out.value = '';
     status.value = 0;

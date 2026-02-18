@@ -159,9 +159,18 @@
                             <a href="{{ route('admin.rooms.edit', $room->id) }}" class="btn btn-sm btn-success edit-btn" 
                                 >Edit</a>
 
-                            <a href="{{ route('admin.rooms.destroy', $room->id) }}" 
-                                class="btn btn-sm btn-danger" 
-                                onclick="return confirm('Are you sure?')">Delete</a>
+                           <form action="{{ route('admin.rooms.destroy', $room->id) }}" 
+                                method="POST" 
+                                style="display:inline-block;"
+                                onsubmit="return confirm('Are you sure you want to delete this room?');">
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

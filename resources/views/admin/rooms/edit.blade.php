@@ -29,7 +29,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="name"
                             class="form-control @error('name') is-invalid @enderror"
-                            value="{{ old('name', $room->name) }}" required>
+                            value="{{ old('name', $room->name) }}" placeholder="Room Name" required>
                         @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -37,7 +37,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="no"
                             class="form-control @error('no') is-invalid @enderror"
-                            value="{{ old('no', $room->no) }}" required>
+                            value="{{ old('no', $room->no) }}" placeholder="Room No" required>
                         @error('no') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -45,7 +45,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="intro"
                             class="form-control @error('intro') is-invalid @enderror"
-                            value="{{ old('intro', $room->intro) }}" required>
+                            value="{{ old('intro', $room->intro) }}" placeholder="Room Intro" required>
                         @error('intro') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -53,7 +53,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="number" step="0.01" name="price"
                             class="form-control @error('price') is-invalid @enderror"
-                            value="{{ old('price', $room->price) }}" required>
+                            value="{{ old('price', $room->price) }}" placeholder="Room Price" required>
                         @error('price') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -61,7 +61,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="size"
                             class="form-control @error('size') is-invalid @enderror"
-                            value="{{ old('size', $room->size) }}" required>
+                            value="{{ old('size', $room->size) }}"  placeholder="Room Size"  required>
                         @error('size') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -69,7 +69,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="bed"
                             class="form-control @error('bed') is-invalid @enderror"
-                            value="{{ old('bed', $room->bed) }}" required>
+                            value="{{ old('bed', $room->bed) }}"  placeholder="Bed Type" required>
                         @error('bed') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -77,7 +77,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="number" name="occupancy"
                             class="form-control @error('occupancy') is-invalid @enderror"
-                            value="{{ old('occupancy', $room->occupancy) }}" required>
+                            value="{{ old('occupancy', $room->occupancy) }}"   placeholder="Occupancy" required>
                         @error('occupancy') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -85,7 +85,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="view"
                             class="form-control @error('view') is-invalid @enderror"
-                            value="{{ old('view', $room->view) }}" required>
+                            value="{{ old('view', $room->view) }}" placeholder="View"  required>
                         @error('view') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
@@ -93,7 +93,7 @@
                     <div class="col-md-6 mb-3">
                         <input type="text" name="floor"
                             class="form-control @error('floor') is-invalid @enderror"
-                            value="{{ old('floor', $room->floor) }}" required>
+                            value="{{ old('floor', $room->floor) }}" placeholder="Floor" required>
                         @error('floor') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 

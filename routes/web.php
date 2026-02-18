@@ -10,7 +10,7 @@ use App\Http\Controllers\ThingstodoController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\TourBookingController;
 
 use App\Http\Controllers\Auth\LoginController;
 
@@ -23,6 +23,7 @@ Route::get('/room-details/{id}', [App\Http\Controllers\PageController::class, 'r
 Route::get('/rooms', [App\Http\Controllers\PageController::class, 'rooms'])->name('rooms');
 Route::post('/room/book', [BookingController::class, 'bookroom'])->name('room.book');
 Route::post('/vehicle/book', [BookingController::class, 'bookvehicle'])->name('book.vehicle');
+Route::post('/tour/book', [TourBookingController::class, 'booktour'])->name('book.tour');
 
 Route::get('/packages', [App\Http\Controllers\PageController::class, 'packages'])->name('packages');
 Route::get('/package-details/{id}', [App\Http\Controllers\PageController::class, 'packagedetails'])->name('package-details');
@@ -53,6 +54,7 @@ Route::prefix('admin')
     Route::resource('multiday_tours_details', MultiDayTourDetailsController::class);
     Route::resource('thingstodo', ThingstodoController::class);
     Route::resource('booking', BookingController::class);
+    Route::resource('tourbooking', TourBookingController::class);
     Route::resource('transport', VehicleBookingController::class);
     Route::resource('rooms', RoomController::class);
     Route::delete('/room-image/{id}', [RoomController::class, 'deleteImage'])

@@ -118,13 +118,13 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4 col-lg-3 fade-in">
+                <!-- <div class="col-md-4 col-lg-3 fade-in">
                     <div class="amenity-grid-item">
                         <i class="bi bi-bell amenity-grid-icon"></i>
                         <h5>Room Service</h5>
                         <p class="small">24-hour room service with extensive menu options available.</p>
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="col-md-4 col-lg-3 fade-in">
                     <div class="amenity-grid-item">
