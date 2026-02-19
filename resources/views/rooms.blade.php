@@ -54,11 +54,11 @@
                             <div class="amenities-list">
                                 <div class="amenity-item">
                                     <i class="bi bi-bed amenity-icon"></i>
-                                    <span>King Bed</span>
+                                    <span>{{ $room->bed }}</span>
                                 </div>
                                 <div class="amenity-item">
                                     <i class="bi bi-person amenity-icon"></i>
-                                    <span>2 Guests</span>
+                                    <span>{{ $room->occupancy }} Guests</span>
                                 </div>
                                 <div class="amenity-item">
                                     <i class="bi bi-wifi amenity-icon"></i>

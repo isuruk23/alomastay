@@ -127,7 +127,7 @@
                                 <i class="bi bi-wifi gold-text me-2"></i>
                                 <i class="bi bi-tv gold-text me-2"></i>
                                 <i class="bi bi-cup gold-text me-2"></i>
-                                <i class="bi bi-water gold-text"></i>
+                                <i class="bi bi-snow gold-text"></i>
                             </div>
                             <a href="/room-details/{{ $room->id }}" class="btn btn-primary w-100">View Details</a>
                         </div>
