@@ -25,6 +25,7 @@ Route::post('/room/book', [BookingController::class, 'bookroom'])->name('room.bo
 Route::post('/vehicle/book', [BookingController::class, 'bookvehicle'])->name('book.vehicle');
 Route::post('/tour/book', [TourBookingController::class, 'booktour'])->name('book.tour');
 
+Route::get('/attractions', [App\Http\Controllers\PageController::class, 'attractions'])->name('attractions');
 Route::get('/packages', [App\Http\Controllers\PageController::class, 'packages'])->name('packages');
 Route::get('/package-details/{id}', [App\Http\Controllers\PageController::class, 'packagedetails'])->name('package-details');
 Route::get('/contact', [App\Http\Controllers\PageController::class, 'contact'])->name('contact');

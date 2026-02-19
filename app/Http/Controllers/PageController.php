@@ -20,6 +20,11 @@ class PageController extends Controller
    
         return view('index', compact('mtours','thingstodos','vehicles','rooms'));
     }
+    public function attractions()
+    {
+        $thingstodos = Thingstodo::all();
+        return view('attractions', compact('thingstodos'));
+    }
     public function about()
     {
         return view('about');

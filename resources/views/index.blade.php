@@ -18,7 +18,7 @@
         <div class="carousel-inner w-100">
 
             <!-- Slide 1 -->
-            <div class="carousel-item active" style="background:url('{{ asset('public/images/slider/1.jpg') }}') center/cover no-repeat; height:90vh;">
+            <div class="carousel-item active" style="background:url('{{ asset('public/images/slider/s1.jpg') }}') center/cover no-repeat; height:90vh;">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center justify-content-center text-center text-white">
                         <div class="col-lg-8">
@@ -34,7 +34,7 @@
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/2.jpg') }}') center/cover no-repeat; height:90vh;">
+            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/s2.jpg') }}') center/cover no-repeat; height:90vh;">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center justify-content-center text-center text-white">
                         <div class="col-lg-8">
@@ -47,7 +47,19 @@
             </div>
 
             <!-- Slide 3 -->
-            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/3.jpg') }}') center/cover no-repeat; height:90vh;">
+            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/s3.jpg') }}') center/cover no-repeat; height:90vh;">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center text-center text-white">
+                        <div class="col-lg-8">
+                            <h1 class="display-4 fw-bold">Perfect Getaway</h1>
+                            <p class="lead">Experience calm, comfort and nature</p>
+                            <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background:url('{{ asset('public/images/slider/s4.jpg') }}') center/cover no-repeat; height:90vh;">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center justify-content-center text-center text-white">
                         <div class="col-lg-8">
@@ -137,10 +149,10 @@
                     <i class="bi bi-egg-fried amenity-icon"></i>
                     <h6>Restaurant</h6>
                 </div>
-                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                <!-- <div class="col-md-4 col-lg-2 text-center amenity-item">
                     <i class="bi bi-water amenity-icon"></i>
                     <h6>Swimming Pool</h6>
-                </div>
+                </div> -->
                 <div class="col-md-4 col-lg-2 text-center amenity-item">
                     <i class="bi bi-wifi amenity-icon"></i>
                     <h6>Free Wi-Fi</h6>
@@ -149,10 +161,10 @@
                     <i class="bi bi-airplane amenity-icon"></i>
                     <h6>Airport Transfers</h6>
                 </div>
-                <div class="col-md-4 col-lg-2 text-center amenity-item">
+                <!-- <div class="col-md-4 col-lg-2 text-center amenity-item">
                     <i class="bi bi-bell amenity-icon"></i>
                     <h6>Room Service</h6>
-                </div>
+                </div> -->
                 <div class="col-md-4 col-lg-2 text-center amenity-item">
                     <i class="bi bi-shield-check amenity-icon"></i>
                     <h6>Secure Parking</h6>
@@ -198,7 +210,7 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="btn btn-primary mt-3">View Full Menu</a>
+                    <!-- <a href="#" class="btn btn-primary mt-3">View Full Menu</a> -->
                 </div>
             </div>
         </div>
@@ -239,7 +251,7 @@
             </div>
             
             <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">View All Attractions</a>
+                <a href="/attractions" class="btn btn-primary">View All Attractions</a>
             </div>
         </div>
     </section>

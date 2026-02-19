@@ -40,6 +40,7 @@
         .navbar {
             background-color: rgba(255, 255, 255, 0.95);
             transition: all 0.3s ease;
+            padding: 0px;
             /* padding-top: 15px;
             padding-bottom: 15px; */
         }
@@ -79,9 +80,9 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg') no-repeat center center;
+            /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero.jpg') no-repeat center center; */
             background-size: cover;
-            /* height: 100vh; */
+            height: 100vh;
             display: flex;
             align-items: center;
             color: white;
@@ -442,6 +443,7 @@
             color: white;
             text-align: center;
             animation: fadeIn 1s ease;
+            padding-top: 100px !important;
         }
         
         .page-hero h1 {
@@ -676,8 +678,9 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.4s ease;
-            height: 100%;
-            margin-bottom: 30px;
+            /* height: 100%; */
+            /* margin-bottom: 30px; */
+            margin: 10px;
         }
         
         .room-card:hover {
@@ -990,6 +993,7 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            margin: auto;
         }
         
         .amenity-item:hover {
